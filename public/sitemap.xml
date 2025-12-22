@@ -4,15 +4,17 @@
   <!-- Homepage -->
   <url>
     <loc>https://ahmadnadeemwebdev-ahmads-web-spark.vercel.app/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Example future page -->
-  <!--
+  <!-- CV Page -->
   <url>
-    <loc>https://ahmadnadeemwebdev-ahmads-web-spark.vercel.app/about</loc>
+    <loc>https://ahmadnadeemwebdev-ahmads-web-spark.vercel.app/cv</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  -->
 
 </urlset>
