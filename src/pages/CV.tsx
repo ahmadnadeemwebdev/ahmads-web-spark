@@ -136,12 +136,47 @@ const CV = () => {
                 <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
                   Education
                 </h2>
-                <div>
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                    <h3 className="font-semibold text-gray-900">Web Development</h3>
-                    <span className="text-sm text-gray-500">2024 - 2025</span>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                      <h3 className="font-semibold text-gray-900">Intermediate (ICS)</h3>
+                      <span className="text-sm text-gray-500">2023 - 2025</span>
+                    </div>
+                    <p className="text-primary text-sm">College Education</p>
                   </div>
-                  <p className="text-primary text-sm">Self-taught & Online Courses</p>
+                </div>
+              </section>
+
+              {/* Courses & Certifications */}
+              <section>
+                <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
+                  Courses & Certifications
+                </h2>
+                <div className="space-y-4">
+                  <div>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                      <h3 className="font-semibold text-gray-900">Web Development Bootcamp</h3>
+                      <span className="text-sm text-gray-500">2024</span>
+                    </div>
+                    <p className="text-primary text-sm">Online Course</p>
+                    <p className="text-gray-600 text-sm mt-1">HTML, CSS, JavaScript, React.js fundamentals</p>
+                  </div>
+                  <div>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                      <h3 className="font-semibold text-gray-900">React.js Complete Guide</h3>
+                      <span className="text-sm text-gray-500">2024</span>
+                    </div>
+                    <p className="text-primary text-sm">Online Course</p>
+                    <p className="text-gray-600 text-sm mt-1">Hooks, State Management, Component Architecture</p>
+                  </div>
+                  <div>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                      <h3 className="font-semibold text-gray-900">Responsive Web Design</h3>
+                      <span className="text-sm text-gray-500">2024</span>
+                    </div>
+                    <p className="text-primary text-sm">freeCodeCamp</p>
+                    <p className="text-gray-600 text-sm mt-1">Mobile-first design, Flexbox, CSS Grid</p>
+                  </div>
                 </div>
               </section>
             </div>
