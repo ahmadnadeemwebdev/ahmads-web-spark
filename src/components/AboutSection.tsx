@@ -14,11 +14,11 @@ const AboutSection = () => {
             
             {/* Who I Am - Main Card */}
             <div className="md:col-span-2 glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-500">
-              <h3 className="text-xl font-semibold text-primary mb-3">🙋‍♂️ Main Kaun Hoon?</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3">🙋‍♂️ Who Am I?</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Main <span className="text-foreground font-medium">Ahmad Nadeem</span> hoon — ek passionate 
-                <span className="text-primary font-medium"> Frontend Developer</span> jo modern web applications 
-                banata hai. Mera focus clean code, fast performance aur user-friendly interfaces par hai.
+                I'm <span className="text-foreground font-medium">Ahmad Nadeem</span> — a passionate 
+                <span className="text-primary font-medium"> Frontend Developer</span> who builds modern web applications. 
+                My focus is on clean code, fast performance, and user-friendly interfaces.
               </p>
             </div>
 
@@ -30,7 +30,7 @@ const AboutSection = () => {
 
             {/* Skills Card */}
             <div className="glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-colors">
-              <h3 className="text-xl font-semibold text-primary mb-3">💡 Meri Skills</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3">💡 My Skills</h3>
               <ul className="text-muted-foreground space-y-2 text-sm">
                 <li>✅ React.js & Component-Based Architecture</li>
                 <li>✅ Responsive & Mobile-First Design</li>
@@ -42,11 +42,11 @@ const AboutSection = () => {
 
             {/* What I Learned Card */}
             <div className="glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-colors">
-              <h3 className="text-xl font-semibold text-primary mb-3">📚 Kya Seekha?</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3">📚 What I Learned</h3>
               <ul className="text-muted-foreground space-y-2 text-sm">
-                <li>🔹 Real-world projects build karna</li>
+                <li>🔹 Building real-world projects</li>
                 <li>🔹 Problem solving & debugging</li>
-                <li>🔹 Clean & maintainable code likhna</li>
+                <li>🔹 Writing clean & maintainable code</li>
                 <li>🔹 API integration & state management</li>
               </ul>
             </div>
@@ -55,9 +55,9 @@ const AboutSection = () => {
             <div className="glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-colors">
               <h3 className="text-xl font-semibold text-primary mb-3">🎯 Future Goal</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Mera goal hai ek <span className="text-foreground font-medium">Full Stack Developer</span> banna 
-                aur innovative web applications banana jo logon ki life easy karein. Backend technologies 
-                seekhna aur freelance projects lena bhi plan mein hai.
+                My goal is to become a <span className="text-foreground font-medium">Full Stack Developer</span> and 
+                build innovative web applications that make people's lives easier. Learning backend technologies 
+                and taking freelance projects is also in my plan.
               </p>
             </div>
 
