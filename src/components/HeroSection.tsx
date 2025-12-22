@@ -29,16 +29,13 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 animate-slide-up" style={{ animationDelay: "0.1s" }}>
-            Web Developer
+            Frontend Developer | React Developer
           </p>
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            Crafting modern, responsive web experiences with{" "}
-            <span className="text-foreground font-medium">HTML</span>,{" "}
-            <span className="text-foreground font-medium">CSS</span>,{" "}
-            <span className="text-foreground font-medium">JavaScript</span> &{" "}
-            <span className="text-primary font-medium">React</span>
+            I build fast, responsive & modern web applications using{" "}
+            <span className="text-primary font-medium">React</span>.
           </p>
 
           {/* CTA Buttons */}
