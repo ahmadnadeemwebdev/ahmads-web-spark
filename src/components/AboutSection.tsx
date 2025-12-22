@@ -1,3 +1,5 @@
+import { User, Lightbulb, BookOpen, Target, Code } from "lucide-react";
+
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 relative">
@@ -14,7 +16,9 @@ const AboutSection = () => {
             
             {/* Who I Am - Main Card */}
             <div className="md:col-span-2 glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-500">
-              <h3 className="text-xl font-semibold text-primary mb-3">🙋‍♂️ Who Am I?</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3 flex items-center gap-2">
+                <User className="w-5 h-5" /> Who Am I?
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
                 I'm <span className="text-foreground font-medium">Ahmad Nadeem</span> — a passionate 
                 <span className="text-primary font-medium"> Frontend Developer</span> who builds modern web applications. 
@@ -30,30 +34,36 @@ const AboutSection = () => {
 
             {/* Skills Card */}
             <div className="glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-colors">
-              <h3 className="text-xl font-semibold text-primary mb-3">💡 My Skills</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3 flex items-center gap-2">
+                <Lightbulb className="w-5 h-5" /> My Skills
+              </h3>
               <ul className="text-muted-foreground space-y-2 text-sm">
-                <li>✅ React.js & Component-Based Architecture</li>
-                <li>✅ Responsive & Mobile-First Design</li>
-                <li>✅ JavaScript (ES6+) & TypeScript</li>
-                <li>✅ Tailwind CSS & Modern Styling</li>
-                <li>✅ Git & Version Control</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> React.js & Component-Based Architecture</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> Responsive & Mobile-First Design</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> JavaScript (ES6+) & TypeScript</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> Tailwind CSS & Modern Styling</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> Git & Version Control</li>
               </ul>
             </div>
 
             {/* What I Learned Card */}
             <div className="glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-colors">
-              <h3 className="text-xl font-semibold text-primary mb-3">📚 What I Learned</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3 flex items-center gap-2">
+                <BookOpen className="w-5 h-5" /> What I Learned
+              </h3>
               <ul className="text-muted-foreground space-y-2 text-sm">
-                <li>🔹 Building real-world projects</li>
-                <li>🔹 Problem solving & debugging</li>
-                <li>🔹 Writing clean & maintainable code</li>
-                <li>🔹 API integration & state management</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> Building real-world projects</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> Problem solving & debugging</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> Writing clean & maintainable code</li>
+                <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-primary"></span> API integration & state management</li>
               </ul>
             </div>
 
             {/* Future Goal Card */}
             <div className="glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-colors">
-              <h3 className="text-xl font-semibold text-primary mb-3">🎯 Future Goal</h3>
+              <h3 className="text-xl font-semibold text-primary mb-3 flex items-center gap-2">
+                <Target className="w-5 h-5" /> Future Goal
+              </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 My goal is to become a <span className="text-foreground font-medium">Full Stack Developer</span> and 
                 build innovative web applications that make people's lives easier. Learning backend technologies 
@@ -63,8 +73,10 @@ const AboutSection = () => {
 
             {/* Tech Stack Card */}
             <div className="md:col-span-2 glass rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-colors">
-              <span className="text-primary text-sm font-mono mb-4 block">// Technologies I Use</span>
-              <div className="flex flex-wrap gap-3">
+              <span className="text-primary text-sm font-mono mb-4 flex items-center gap-2">
+                <Code className="w-4 h-4" /> // Technologies I Use
+              </span>
+              <div className="flex flex-wrap gap-3 mt-4">
                 {["React", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Git", "GitHub", "VS Code"].map((tech) => (
                   <span 
                     key={tech}
