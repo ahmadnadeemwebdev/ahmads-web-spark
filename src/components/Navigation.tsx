@@ -78,16 +78,16 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden glass mt-2 mx-4 rounded-lg p-6 animate-slide-up">
-          <div className="flex flex-col gap-4">
+        <div className="md:hidden glass mt-2 mx-4 rounded-xl p-4 animate-slide-up">
+          <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`transition-colors duration-300 py-2 ${
+                className={`transition-colors duration-300 py-3 px-4 rounded-lg text-base ${
                   activeSection === link.href.slice(1)
-                    ? "text-primary font-medium"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-primary font-medium bg-primary/10"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >

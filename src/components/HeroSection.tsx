@@ -39,14 +39,14 @@ const HeroSection = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
-            <a href="#projects">
-              <Button variant="hero" size="lg">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up" style={{ animationDelay: "0.3s" }}>
+            <a href="#projects" className="w-full sm:w-auto">
+              <Button variant="hero" size="lg" className="w-full sm:w-auto min-h-[48px] text-base">
                 View My Work
               </Button>
             </a>
-            <Link to="/cv">
-              <Button variant="glow" size="lg">
+            <Link to="/cv" className="w-full sm:w-auto">
+              <Button variant="glow" size="lg" className="w-full sm:w-auto min-h-[48px] text-base">
                 View CV
               </Button>
             </Link>
