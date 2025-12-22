@@ -14,14 +14,14 @@ const TestimonialsSection = () => {
       role: "Startup Founder",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
       content: "Working with Ahmad was a great experience. He understood our requirements perfectly and delivered a modern, responsive website on time. Will definitely work with him again!",
-      rating: 5,
+      rating: 4,
     },
     {
       name: "Project Partner",
       role: "Developer",
       image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=100&h=100&fit=crop&crop=face",
       content: "Ahmad's React skills are impressive. He writes clean, maintainable code and is always eager to learn new technologies. A reliable developer to collaborate with!",
-      rating: 5,
+      rating: 4,
     },
   ];
 
