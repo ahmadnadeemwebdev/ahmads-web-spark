@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Send, Loader2 } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, Github, Linkedin, Download } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -55,8 +55,21 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "Wapda Town, Rahamat Chowk, Block K2",
+      value: "Lahore, Pakistan",
       href: "#",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/ahmadnadeemwebdev",
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/ahmad-nadeem-848284380",
     },
   ];
 
@@ -106,6 +119,33 @@ const ContactSection = () => {
                   </a>
                 ))}
               </div>
+
+              {/* Social Links */}
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
+                <div className="flex gap-3">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="glass w-12 h-12 rounded-xl flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group"
+                      title={social.label}
+                    >
+                      <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Resume Download */}
+              <a href="/Ahmad_Nadeem_CV.pdf" download>
+                <Button variant="outline" size="lg" className="w-full gap-2 mt-4">
+                  <Download className="w-5 h-5" />
+                  Download Resume
+                </Button>
+              </a>
             </div>
 
             {/* Contact Form */}
