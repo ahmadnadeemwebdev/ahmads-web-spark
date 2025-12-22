@@ -1,11 +1,11 @@
-import { Code2, Palette, Zap, Atom } from "lucide-react";
+import { Code2, Palette, Zap, Atom, GitBranch, Monitor, Layout, Globe, Terminal, FileCode, Smartphone, Layers } from "lucide-react";
 
 const SkillsSection = () => {
   const skills = [
     {
       name: "HTML5",
       level: 95,
-      icon: Code2,
+      icon: FileCode,
       description: "Semantic markup & accessibility",
     },
     {
@@ -26,15 +26,27 @@ const SkillsSection = () => {
       icon: Atom,
       description: "Hooks, state & components",
     },
+    {
+      name: "Tailwind CSS",
+      level: 85,
+      icon: Layers,
+      description: "Utility-first CSS framework",
+    },
+    {
+      name: "Responsive Design",
+      level: 90,
+      icon: Smartphone,
+      description: "Mobile-first approach",
+    },
   ];
 
   const tools = [
-    "Git & GitHub",
-    "VS Code",
-    "Tailwind CSS",
-    "Bootstrap",
-    "Responsive Design",
-    "REST APIs",
+    { name: "Git", icon: GitBranch },
+    { name: "GitHub", icon: Globe },
+    { name: "VS Code", icon: Terminal },
+    { name: "Bootstrap", icon: Layout },
+    { name: "REST APIs", icon: Code2 },
+    { name: "Chrome DevTools", icon: Monitor },
   ];
 
   return (
@@ -55,7 +67,7 @@ const SkillsSection = () => {
           </div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-2 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {skills.map((skill) => (
               <div
                 key={skill.name}
@@ -85,15 +97,18 @@ const SkillsSection = () => {
 
           {/* Tools & Technologies */}
           <div className="text-center">
-            <h3 className="text-xl font-semibold mb-6">Tools & Technologies</h3>
-            <div className="flex flex-wrap justify-center gap-3">
+            <h3 className="text-xl font-semibold mb-6">Tools I Use</h3>
+            <div className="flex flex-wrap justify-center gap-4">
               {tools.map((tool) => (
-                <span
-                  key={tool}
-                  className="glass px-5 py-2.5 rounded-full text-sm text-muted-foreground hover:text-primary hover:border-primary/50 transition-all duration-300 cursor-default"
+                <div
+                  key={tool.name}
+                  className="glass px-5 py-3 rounded-xl flex items-center gap-3 hover:border-primary/50 transition-all duration-300 group cursor-default"
                 >
-                  {tool}
-                </span>
+                  <tool.icon className="w-5 h-5 text-primary" />
+                  <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
+                    {tool.name}
+                  </span>
+                </div>
               ))}
             </div>
           </div>
