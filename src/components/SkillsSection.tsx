@@ -1,52 +1,52 @@
-import { Code2, Palette, Zap, Atom, GitBranch, Monitor, Layout, Globe, Terminal, FileCode, Smartphone, Layers } from "lucide-react";
+import { Film, Palette, Zap, Music, Scissors, Monitor, Sparkles, Camera, Type, Layers } from "lucide-react";
 
 const SkillsSection = () => {
   const skills = [
     {
-      name: "HTML5",
-      level: 95,
-      icon: FileCode,
-      description: "Semantic markup & accessibility",
-    },
-    {
-      name: "CSS3",
-      level: 70,
-      icon: Palette,
-      description: "Animations & responsive layouts",
-    },
-    {
-      name: "JavaScript",
-      level: 65,
-      icon: Zap,
-      description: "ES6+ & DOM manipulation",
-    },
-    {
-      name: "React",
-      level: 80,
-      icon: Atom,
-      description: "Hooks, state & components",
-    },
-    {
-      name: "Tailwind CSS",
-      level: 85,
-      icon: Layers,
-      description: "Utility-first CSS framework",
-    },
-    {
-      name: "Responsive Design",
+      name: "Video Editing",
       level: 90,
-      icon: Smartphone,
-      description: "Mobile-first approach",
+      icon: Scissors,
+      description: "Cuts, transitions & storytelling",
+    },
+    {
+      name: "Color Grading",
+      level: 85,
+      icon: Palette,
+      description: "LUTs, color science & mood",
+    },
+    {
+      name: "Motion Graphics",
+      level: 75,
+      icon: Sparkles,
+      description: "Animations & visual effects",
+    },
+    {
+      name: "Sound Design",
+      level: 70,
+      icon: Music,
+      description: "Audio mixing & SFX",
+    },
+    {
+      name: "Short Form Content",
+      level: 95,
+      icon: Zap,
+      description: "Reels, TikToks & Shorts",
+    },
+    {
+      name: "Thumbnail Design",
+      level: 80,
+      icon: Camera,
+      description: "Click-worthy visuals",
     },
   ];
 
   const tools = [
-    { name: "Git", icon: GitBranch },
-    { name: "GitHub", icon: Globe },
-    { name: "VS Code", icon: Terminal },
-    { name: "Bootstrap", icon: Layout },
-    { name: "REST APIs", icon: Code2 },
-    { name: "Chrome DevTools", icon: Monitor },
+    { name: "Premiere Pro", icon: Film },
+    { name: "After Effects", icon: Sparkles },
+    { name: "DaVinci Resolve", icon: Palette },
+    { name: "Photoshop", icon: Layers },
+    { name: "Audition", icon: Music },
+    { name: "CapCut", icon: Monitor },
   ];
 
   return (
@@ -57,12 +57,12 @@ const SkillsSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="text-primary font-mono text-sm tracking-wider uppercase">My Skills</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Technical <span className="text-gradient">Expertise</span>
+            <span className="text-primary text-sm tracking-widest uppercase">My Skills</span>
+            <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">
+              TECHNICAL <span className="text-gradient">EXPERTISE</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Technologies I've mastered through dedicated learning and real-world projects
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-light">
+              Skills mastered through hundreds of hours of editing and real client projects
             </p>
           </div>
 
@@ -85,7 +85,7 @@ const SkillsSection = () => {
                     <p className="text-muted-foreground text-sm mb-3">{skill.description}</p>
                     <div className="h-2.5 bg-background/50 rounded-full overflow-hidden border border-border/30">
                       <div
-                        className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out shadow-[0_0_10px_hsl(246,75%,59%,0.5)]"
+                        className="h-full bg-gradient-primary rounded-full transition-all duration-1000 ease-out shadow-[0_0_10px_hsl(32,95%,55%,0.5)]"
                         style={{ width: `${skill.level}%` }}
                       />
                     </div>
@@ -95,9 +95,9 @@ const SkillsSection = () => {
             ))}
           </div>
 
-          {/* Tools & Technologies */}
+          {/* Tools */}
           <div className="text-center">
-            <h3 className="text-xl font-semibold mb-6">Tools I Use</h3>
+            <h3 className="text-xl font-semibold mb-6">Software I Master</h3>
             <div className="flex flex-wrap justify-center gap-4">
               {tools.map((tool) => (
                 <div

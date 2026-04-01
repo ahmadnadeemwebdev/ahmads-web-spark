@@ -3,27 +3,27 @@ import { Calendar, MapPin } from "lucide-react";
 const ExperienceSection = () => {
   const experiences = [
     {
-      title: "Frontend Developer",
-      company: "Freelance",
+      title: "Freelance Video Editor",
+      company: "Self-Employed",
       location: "Remote",
-      period: "Dec 2024 - Present",
+      period: "2024 - Present",
       description: [
-        "Developed responsive and interactive web pages using HTML, CSS, and JavaScript",
-        "Built reusable and modular components using React.js",
-        "Implemented props, state, and component-based architecture",
-        "Fixed UI bugs and optimized performance for better user experience",
+        "Edited short-form content (Reels, TikToks, Shorts) for multiple clients",
+        "Created cinematic edits with professional color grading using DaVinci Resolve",
+        "Designed custom motion graphics and text animations in After Effects",
+        "Delivered 50+ projects with fast turnaround and client satisfaction",
       ],
     },
     {
-      title: "Learning & Development",
+      title: "Learning & Skill Building",
       company: "Self-taught",
-      location: "Online Courses & Projects",
-      period: "2024",
+      location: "Online Courses & YouTube",
+      period: "2023 - 2024",
       description: [
-        "Completed comprehensive web development courses",
-        "Built multiple personal and practice projects",
-        "Learned modern frameworks including React",
-        "Practiced responsive design and CSS animations",
+        "Mastered Premiere Pro, After Effects & DaVinci Resolve",
+        "Studied color science, storytelling, and editing psychology",
+        "Built a portfolio through practice edits and passion projects",
+        "Learned sound design and audio mixing with Adobe Audition",
       ],
     },
   ];
@@ -34,21 +34,19 @@ const ExperienceSection = () => {
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="text-primary font-mono text-sm tracking-wider uppercase">My Journey</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Work <span className="text-gradient">Experience</span>
+            <span className="text-primary text-sm tracking-widest uppercase">My Journey</span>
+            <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">
+              WORK <span className="text-gradient">EXPERIENCE</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              My professional journey and continuous growth in web development
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-light">
+              My journey in the world of video editing and content creation
             </p>
           </div>
 
           {/* Timeline */}
           <div className="relative">
-            {/* Timeline Line */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-transparent md:-translate-x-1/2" />
 
-            {/* Experience Items */}
             {experiences.map((exp, index) => (
               <div
                 key={index}
@@ -56,12 +54,10 @@ const ExperienceSection = () => {
                   index % 2 === 0 ? "md:pr-12 md:ml-0" : "md:pl-12 md:ml-auto"
                 }`}
               >
-                {/* Timeline Dot */}
                 <div className="absolute left-0 md:left-auto md:right-0 top-0 w-4 h-4 bg-primary rounded-full glow-primary -translate-x-1/2 md:translate-x-1/2" 
                   style={{ [index % 2 === 0 ? 'right' : 'left']: '-8px' }}
                 />
 
-                {/* Card */}
                 <div className="glass p-6 rounded-xl ml-8 md:ml-0 hover:border-primary/30 transition-all duration-300">
                   <div className="flex items-center gap-2 text-primary text-sm font-mono mb-2">
                     <Calendar className="w-4 h-4" />

@@ -11,7 +11,7 @@ interface Message {
 const AIChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: "Hi! I'm Ahmad's AI assistant. How can I help you today?" }
+    { role: "assistant", content: "Hi! I'm Ahmad's AI assistant. Ask me anything about his video editing services!" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +42,7 @@ const AIChatBot = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
         },
-        body: JSON.stringify({ messages: [...messages, userMessage].filter(m => m.role !== "assistant" || m.content !== "Hi! I'm Ahmad's AI assistant. How can I help you today?") }),
+        body: JSON.stringify({ messages: [...messages, userMessage].filter(m => m.role !== "assistant" || m.content !== "Hi! I'm Ahmad's AI assistant. Ask me anything about his video editing services!") }),
       });
 
       if (!response.ok) {
@@ -56,7 +56,6 @@ const AIChatBot = () => {
       const decoder = new TextDecoder();
       let textBuffer = "";
 
-      // Add empty assistant message
       setMessages(prev => [...prev, { role: "assistant", content: "" }]);
 
       while (true) {
@@ -89,7 +88,6 @@ const AIChatBot = () => {
               });
             }
           } catch {
-            // Incomplete JSON, put back in buffer
             textBuffer = line + "\n" + textBuffer;
             break;
           }
@@ -98,7 +96,6 @@ const AIChatBot = () => {
     } catch (error) {
       console.error("Chat error:", error);
       toast.error(error instanceof Error ? error.message : "Failed to send message");
-      // Remove the empty assistant message if there was an error
       if (!assistantContent) {
         setMessages(prev => prev.slice(0, -1));
       }
@@ -109,7 +106,6 @@ const AIChatBot = () => {
 
   return (
     <>
-      {/* Chat Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300 flex items-center justify-center"
@@ -117,10 +113,8 @@ const AIChatBot = () => {
         {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
       </button>
 
-      {/* Chat Window */}
       {isOpen && (
         <div className="fixed bottom-24 right-6 z-50 w-80 sm:w-96 h-[450px] glass rounded-2xl border border-primary/20 flex flex-col overflow-hidden animate-scale-in">
-          {/* Header */}
           <div className="p-4 border-b border-border/50 bg-primary/5">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
@@ -128,12 +122,11 @@ const AIChatBot = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-sm">AI Assistant</h3>
-                <p className="text-xs text-muted-foreground">Ask me anything about Ahmad</p>
+                <p className="text-xs text-muted-foreground">Ask about Ahmad's editing services</p>
               </div>
             </div>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((message, index) => (
               <div
@@ -164,7 +157,6 @@ const AIChatBot = () => {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
           <div className="p-4 border-t border-border/50">
             <div className="flex gap-2">
               <input

@@ -1,4 +1,4 @@
-import { ArrowLeft, Download, Mail, MapPin, Linkedin, Github } from "lucide-react";
+import { ArrowLeft, Download, Mail, MapPin, Instagram, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -14,7 +14,6 @@ const CV = () => {
 
   return (
     <div className="min-h-screen bg-background py-8 px-4">
-      {/* Header */}
       <div className="max-w-4xl mx-auto mb-8 flex items-center justify-between">
         <Link 
           to="/" 
@@ -32,72 +31,53 @@ const CV = () => {
         </Button>
       </div>
 
-      {/* CV Content */}
       <div className="max-w-4xl mx-auto bg-white text-gray-900 rounded-lg shadow-2xl overflow-hidden">
         <div className="p-8 md:p-12">
-          {/* Header Section */}
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
                 AHMAD NADEEM
               </h1>
-              <p className="text-xl text-primary font-semibold">
-                Frontend Developer
+              <p className="text-xl text-orange-600 font-semibold">
+                Video Editor & Motion Designer
               </p>
             </div>
             <div className="flex flex-col gap-2 text-sm text-gray-600">
-              <a 
-                href="mailto:ahmadnadeemwebdev@gmail.com" 
-                className="flex items-center gap-2 hover:text-primary transition-colors"
-              >
+              <a href="mailto:ahmadnadeemwebdev@gmail.com" className="flex items-center gap-2 hover:text-orange-600 transition-colors">
                 ahmadnadeemwebdev@gmail.com
                 <Mail className="w-4 h-4" />
               </a>
               <div className="flex items-center gap-2">
-                Wapda Town, Lahore
+                Lahore, Pakistan
                 <MapPin className="w-4 h-4" />
               </div>
-              <a 
-                href="https://www.linkedin.com/in/ahmad-nadeem-848284380" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-primary transition-colors"
-              >
-                LinkedIn
-                <Linkedin className="w-4 h-4" />
+              <a href="https://youtube.com/@ahmadnadeem" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-orange-600 transition-colors">
+                YouTube
+                <Youtube className="w-4 h-4" />
               </a>
-              <a 
-                href="https://github.com/ahmadnadeemwebdev" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-primary transition-colors"
-              >
-                GitHub
-                <Github className="w-4 h-4" />
+              <a href="https://instagram.com/ahmadnadeem" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-orange-600 transition-colors">
+                Instagram
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           <div className="w-full h-px bg-gray-200 mb-8" />
 
-          {/* Main Content Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Left Column - Profile & Experience */}
             <div className="md:col-span-2 space-y-8">
-              {/* Professional Profile */}
               <section>
                 <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
                   Professional Profile
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Dedicated and detail-oriented Frontend Developer with 1 year of professional experience 
-                  in developing responsive, user-friendly and modern web interfaces. Proficient in HTML, 
-                  CSS, JavaScript (ES6), and React.js. Passionate about clean code, 
-                  continuous learning, and delivering high-quality digital solutions.
+                  Creative and detail-oriented Video Editor with 2+ years of experience in creating 
+                  engaging social media content, cinematic edits, and motion graphics. Proficient in 
+                  Adobe Premiere Pro, After Effects, and DaVinci Resolve. Passionate about storytelling 
+                  through visual media and delivering high-quality content for creators and brands.
                 </p>
               </section>
 
-              {/* Work Experience */}
               <section>
                 <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
                   Work Experience
@@ -105,122 +85,71 @@ const CV = () => {
                 <div className="space-y-6">
                   <div>
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                      <h3 className="font-semibold text-gray-900">Frontend Developer</h3>
-                      <span className="text-sm text-gray-500">Dec 2024 - Present</span>
+                      <h3 className="font-semibold text-gray-900">Freelance Video Editor</h3>
+                      <span className="text-sm text-gray-500">2024 - Present</span>
                     </div>
-                    <p className="text-primary text-sm mb-2">Freelance</p>
+                    <p className="text-orange-600 text-sm mb-2">Self-Employed</p>
                     <ul className="text-gray-600 text-sm space-y-1">
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        Developed responsive and interactive web pages using HTML, CSS, and JavaScript
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        Built reusable and modular components using React.js
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        Implemented props, state, and component-based architecture
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        Fixed UI bugs and optimized performance for better user experience
-                      </li>
+                      <li className="flex items-start gap-2"><span className="text-orange-600 mt-1">•</span>Edited short-form content for social media creators and brands</li>
+                      <li className="flex items-start gap-2"><span className="text-orange-600 mt-1">•</span>Created cinematic edits with professional color grading</li>
+                      <li className="flex items-start gap-2"><span className="text-orange-600 mt-1">•</span>Designed motion graphics and text animations</li>
+                      <li className="flex items-start gap-2"><span className="text-orange-600 mt-1">•</span>Delivered 50+ projects with fast turnaround</li>
                     </ul>
                   </div>
                 </div>
               </section>
 
-              {/* Education */}
               <section>
                 <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
                   Education
                 </h2>
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                      <h3 className="font-semibold text-gray-900">Intermediate (ICS)</h3>
-                      <span className="text-sm text-gray-500">2023 - 2025</span>
-                    </div>
-                    <p className="text-primary text-sm">College Education</p>
+                <div>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                    <h3 className="font-semibold text-gray-900">Intermediate (ICS)</h3>
+                    <span className="text-sm text-gray-500">2023 - 2025</span>
                   </div>
-                </div>
-              </section>
-
-              {/* Courses & Certifications */}
-              <section>
-                <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
-                  Courses & Certifications
-                </h2>
-                <div className="space-y-4">
-                  <div>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                      <h3 className="font-semibold text-gray-900">Web Development Bootcamp</h3>
-                      <span className="text-sm text-gray-500">2024</span>
-                    </div>
-                    <p className="text-primary text-sm">Online Course</p>
-                    <p className="text-gray-600 text-sm mt-1">HTML, CSS, JavaScript, React.js fundamentals</p>
-                  </div>
-                  <div>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                      <h3 className="font-semibold text-gray-900">React.js Complete Guide</h3>
-                      <span className="text-sm text-gray-500">2024</span>
-                    </div>
-                    <p className="text-primary text-sm">Online Course</p>
-                    <p className="text-gray-600 text-sm mt-1">Hooks, State Management, Component Architecture</p>
-                  </div>
-                  <div>
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                      <h3 className="font-semibold text-gray-900">Responsive Web Design</h3>
-                      <span className="text-sm text-gray-500">2024</span>
-                    </div>
-                    <p className="text-primary text-sm">freeCodeCamp</p>
-                    <p className="text-gray-600 text-sm mt-1">Mobile-first design, Flexbox, CSS Grid</p>
-                  </div>
+                  <p className="text-orange-600 text-sm">College Education</p>
                 </div>
               </section>
             </div>
 
-            {/* Right Column - Skills */}
             <div className="space-y-8">
-              {/* Tech Stack */}
               <section>
                 <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
-                  Tech Stack
+                  Software
                 </h2>
-                
-                {/* Frontend */}
                 <div className="mb-4">
-                  <h3 className="text-primary font-semibold text-sm mb-2">Frontend</h3>
+                  <h3 className="text-orange-600 font-semibold text-sm mb-2">Editing</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["HTML5", "CSS3", "JavaScript", "React.js", "Tailwind CSS", "Bootstrap"].map((skill) => (
-                      <span 
-                        key={skill}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium"
-                      >
-                        {skill}
-                      </span>
+                    {["Premiere Pro", "DaVinci Resolve", "CapCut", "After Effects"].map((skill) => (
+                      <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium">{skill}</span>
                     ))}
                   </div>
                 </div>
-
-                {/* Tools */}
                 <div className="mb-4">
-                  <h3 className="text-primary font-semibold text-sm mb-2">Tools</h3>
+                  <h3 className="text-orange-600 font-semibold text-sm mb-2">Design</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Git", "GitHub", "VS Code", "Responsive Design"].map((skill) => (
-                      <span 
-                        key={skill}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium"
-                      >
-                        {skill}
-                      </span>
+                    {["Photoshop", "Canva", "Audition"].map((skill) => (
+                      <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium">{skill}</span>
                     ))}
                   </div>
                 </div>
               </section>
 
-              {/* Languages */}
+              <section>
+                <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
+                  Skills
+                </h2>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <p>• Video Editing & Cutting</p>
+                  <p>• Color Grading & LUTs</p>
+                  <p>• Motion Graphics</p>
+                  <p>• Sound Design</p>
+                  <p>• Short Form Content</p>
+                  <p>• Thumbnail Design</p>
+                </div>
+              </section>
+
               <section>
                 <h2 className="text-lg font-bold text-gray-900 mb-4 uppercase tracking-wide">
                   Languages

@@ -12,7 +12,6 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Detect active section
       const sections = ["home", "about", "projects", "skills", "experience", "contact"];
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
@@ -45,8 +44,8 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold text-gradient">
-          Ahmad
+        <a href="#home" className="text-2xl font-bold text-gradient tracking-tight">
+          AHMAD
         </a>
 
         {/* Desktop Navigation */}
@@ -55,7 +54,7 @@ const Navigation = () => {
             <a
               key={link.href}
               href={link.href}
-              className={`transition-colors duration-300 ${
+              className={`text-sm tracking-wider uppercase transition-colors duration-300 ${
                 activeSection === link.href.slice(1)
                   ? "text-primary font-medium"
                   : "text-muted-foreground hover:text-foreground"
@@ -88,7 +87,7 @@ const Navigation = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`transition-colors duration-300 py-3 px-4 rounded-lg text-base ${
+                className={`transition-colors duration-300 py-3 px-4 rounded-lg text-base tracking-wider uppercase ${
                   activeSection === link.href.slice(1)
                     ? "text-primary font-medium bg-primary/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
