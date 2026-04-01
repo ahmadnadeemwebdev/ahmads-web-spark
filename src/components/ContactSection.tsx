@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Send, Loader2, Github, Linkedin, Download } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, Instagram, Youtube, Download } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -62,14 +62,14 @@ const ContactSection = () => {
 
   const socialLinks = [
     {
-      icon: Github,
-      label: "GitHub",
-      href: "https://github.com/ahmadnadeemwebdev",
+      icon: Youtube,
+      label: "YouTube",
+      href: "https://youtube.com/@ahmadnadeem",
     },
     {
-      icon: Linkedin,
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/ahmad-nadeem-848284380",
+      icon: Instagram,
+      label: "Instagram",
+      href: "https://instagram.com/ahmadnadeem",
     },
   ];
 
@@ -81,13 +81,13 @@ const ContactSection = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="text-primary font-mono text-sm tracking-wider uppercase">Get In Touch</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6">
-              Let's <span className="text-gradient">Connect</span>
+            <span className="text-primary text-sm tracking-widest uppercase">Get In Touch</span>
+            <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">
+              LET'S <span className="text-gradient">CONNECT</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Have a project in mind? I'd love to hear from you. Send me a message 
-              and let's create something amazing together.
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-light">
+              Need a video edited? Let's create something amazing together. 
+              Send me a message and I'll get back to you within 24 hours.
             </p>
           </div>
 
@@ -96,9 +96,9 @@ const ContactSection = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
-                <p className="text-muted-foreground">
-                  Feel free to reach out through any of these channels. I typically 
-                  respond within 24 hours.
+                <p className="text-muted-foreground font-light">
+                  Feel free to reach out for project inquiries, collaborations, 
+                  or just to say hi!
                 </p>
               </div>
 
@@ -138,14 +138,6 @@ const ContactSection = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Resume Download */}
-              <a href="/Ahmad_Nadeem_CV.pdf" download>
-                <Button variant="outline" size="lg" className="w-full gap-2 mt-4">
-                  <Download className="w-5 h-5" />
-                  Download Resume
-                </Button>
-              </a>
             </div>
 
             {/* Contact Form */}
@@ -172,9 +164,9 @@ const ContactSection = () => {
                 />
               </div>
               <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Message</label>
+                <label className="text-sm text-muted-foreground mb-2 block">Project Details</label>
                 <Textarea
-                  placeholder="Tell me about your project..."
+                  placeholder="Tell me about your video project..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
@@ -182,7 +174,7 @@ const ContactSection = () => {
                   className="bg-background/50 border-border/50 focus:border-primary resize-none"
                 />
               </div>
-              <Button type="submit" variant="hero" size="lg" className="w-full" disabled={isLoading}>
+              <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full" disabled={isLoading}>
                 {isLoading ? (
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                 ) : (
