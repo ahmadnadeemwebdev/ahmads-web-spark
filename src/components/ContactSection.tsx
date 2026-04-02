@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Send, Loader2, Instagram, Youtube, Download } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, Instagram, Youtube, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -45,145 +45,103 @@ const ContactSection = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "ahmadnadeemwebdev@gmail.com",
-      href: "mailto:ahmadnadeemwebdev@gmail.com",
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "Lahore, Pakistan",
-      href: "#",
-    },
-  ];
-
-  const socialLinks = [
-    {
-      icon: Youtube,
-      label: "YouTube",
-      href: "https://youtube.com/@ahmadnadeem",
-    },
-    {
-      icon: Instagram,
-      label: "Instagram",
-      href: "https://instagram.com/ahmadnadeem",
-    },
-  ];
-
   return (
-    <section id="contact" className="py-24 relative">
-      <div className="absolute inset-0 grid-pattern opacity-20" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <span className="text-primary text-sm tracking-widest uppercase">Get In Touch</span>
-            <h2 className="text-4xl md:text-6xl font-bold mt-4 mb-6 tracking-tight">
-              LET'S <span className="text-gradient">CONNECT</span>
+    <section id="contact" className="py-32 px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          {/* Left */}
+          <div>
+            <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Contact</p>
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+              Let's work
+              <span className="text-muted-foreground"> together</span>
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg font-light">
-              Need a video edited? Let's create something amazing together. 
-              Send me a message and I'll get back to you within 24 hours.
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+              Have a project in mind? Send me a message and I'll get back to you within 24 hours.
             </p>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
-                <p className="text-muted-foreground font-light">
-                  Feel free to reach out for project inquiries, collaborations, 
-                  or just to say hi!
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {contactInfo.map((info) => (
-                  <a
-                    key={info.label}
-                    href={info.href}
-                    className="glass p-4 rounded-xl flex items-center gap-4 hover:border-primary/50 transition-all duration-300 group"
-                  >
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <info.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{info.label}</p>
-                      <p className="font-medium">{info.value}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-
-              {/* Social Links */}
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Follow Me</h4>
-                <div className="flex gap-3">
-                  {socialLinks.map((social) => (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="glass w-12 h-12 rounded-xl flex items-center justify-center hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 group"
-                      title={social.label}
-                    >
-                      <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </a>
-                  ))}
-                </div>
+            {/* Contact info */}
+            <div className="space-y-4 mb-10">
+              <a href="mailto:ahmadnadeemwebdev@gmail.com" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group">
+                <Mail className="w-4 h-4" />
+                ahmadnadeemwebdev@gmail.com
+                <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+              <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                <MapPin className="w-4 h-4" />
+                Lahore, Pakistan
               </div>
             </div>
 
-            {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="glass p-8 rounded-xl space-y-6">
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Your Name</label>
-                <Input
-                  placeholder="John Doe"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                  className="bg-background/50 border-border/50 focus:border-primary"
-                />
-              </div>
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Your Email</label>
-                <Input
-                  type="email"
-                  placeholder="john@example.com"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  required
-                  className="bg-background/50 border-border/50 focus:border-primary"
-                />
-              </div>
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Project Details</label>
-                <Textarea
-                  placeholder="Tell me about your video project..."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                  rows={5}
-                  className="bg-background/50 border-border/50 focus:border-primary resize-none"
-                />
-              </div>
-              <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full" disabled={isLoading}>
-                {isLoading ? (
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                ) : (
-                  <Send className="w-4 h-4 mr-2" />
-                )}
-                {isLoading ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
+            {/* Socials */}
+            <div className="flex gap-3">
+              <a
+                href="https://youtube.com/@ahmadnadeem"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-muted-foreground transition-all"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a
+                href="https://instagram.com/ahmadnadeem"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-muted-foreground transition-all"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
           </div>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="text-sm text-muted-foreground mb-2 block">Name</label>
+              <Input
+                placeholder="Your name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+                className="bg-transparent border-border focus:border-foreground rounded-xl h-12"
+              />
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground mb-2 block">Email</label>
+              <Input
+                type="email"
+                placeholder="you@example.com"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
+                className="bg-transparent border-border focus:border-foreground rounded-xl h-12"
+              />
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground mb-2 block">Project Details</label>
+              <Textarea
+                placeholder="Tell me about your video project..."
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                required
+                rows={5}
+                className="bg-transparent border-border focus:border-foreground resize-none rounded-xl"
+              />
+            </div>
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full h-12"
+              disabled={isLoading}
+            >
+              {isLoading ? (
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              ) : (
+                <Send className="w-4 h-4 mr-2" />
+              )}
+              {isLoading ? "Sending..." : "Send Message"}
+            </Button>
+          </form>
         </div>
       </div>
     </section>

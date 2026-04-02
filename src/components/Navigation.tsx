@@ -11,9 +11,8 @@ const Navigation = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
       const sections = ["home", "about", "projects", "skills", "experience", "contact"];
-      for (const section of sections.reverse()) {
+      for (const section of [...sections].reverse()) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -29,68 +28,66 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: "#home", label: "Home" },
+    { href: "#home", label: "Work" },
     { href: "#about", label: "About" },
     { href: "#projects", label: "Projects" },
     { href: "#skills", label: "Skills" },
-    { href: "#experience", label: "Experience" },
     { href: "#contact", label: "Contact" },
   ];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass py-4" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-4"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold text-gradient tracking-tight">
-          AHMAD
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+        <a href="#home" className="text-lg font-semibold tracking-tight">
+          Ahmad Nadeem
         </a>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm tracking-wider uppercase transition-colors duration-300 ${
+              className={`px-4 py-2 text-sm rounded-full transition-all duration-300 ${
                 activeSection === link.href.slice(1)
-                  ? "text-primary font-medium"
+                  ? "bg-foreground text-background font-medium"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {link.label}
             </a>
           ))}
-          <ThemeToggle />
+          <div className="ml-2">
+            <ThemeToggle />
+          </div>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile */}
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X /> : <Menu />}
+          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden glass mt-2 mx-4 rounded-xl p-4 animate-slide-up">
-          <div className="flex flex-col gap-1">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 mt-2">
+          <div className="flex flex-col p-4 gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`transition-colors duration-300 py-3 px-4 rounded-lg text-base tracking-wider uppercase ${
+                className={`py-3 px-4 rounded-lg text-sm transition-colors ${
                   activeSection === link.href.slice(1)
-                    ? "text-primary font-medium bg-primary/10"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                    ? "bg-foreground text-background font-medium"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
