@@ -10,7 +10,7 @@ const HeroSection = () => {
         {/* Status */}
         <div className="mb-8 animate-reveal">
           <span className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
             Available for freelance work
           </span>
         </div>
