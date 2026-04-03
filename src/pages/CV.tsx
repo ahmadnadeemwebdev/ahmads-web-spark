@@ -72,8 +72,8 @@ const CV = () => {
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
                   Creative and detail-oriented Video Editor with 1+ year of experience in creating 
-                  engaging social media content, cinematic edits, and motion graphics. Proficient in 
-                  Adobe Premiere Pro, After Effects, and DaVinci Resolve. Passionate about storytelling 
+                  engaging social media content and cinematic edits. Proficient in 
+                  Adobe Premiere Pro. Passionate about storytelling 
                   through visual media and delivering high-quality content for creators and brands.
                 </p>
               </section>
