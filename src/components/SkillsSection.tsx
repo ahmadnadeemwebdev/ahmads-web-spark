@@ -1,26 +1,16 @@
-import { Scissors, Palette, Sparkles, Music, Zap, Camera } from "lucide-react";
+import { Scissors, Palette, Zap, Camera } from "lucide-react";
 
 const SkillsSection = () => {
   const skills = [
     {
       icon: Scissors,
       title: "Video Editing",
-      description: "Clean cuts, smooth transitions & compelling storytelling for any format.",
+      description: "Clean cuts, smooth transitions & compelling storytelling in Premiere Pro.",
     },
     {
       icon: Palette,
       title: "Color Grading",
-      description: "Professional color science, LUTs & mood-setting color correction.",
-    },
-    {
-      icon: Sparkles,
-      title: "Motion Graphics",
-      description: "Dynamic animations, text effects & visual elements that pop.",
-    },
-    {
-      icon: Music,
-      title: "Sound Design",
-      description: "Audio mixing, SFX layering & beat-synced editing for impact.",
+      description: "Professional color correction & LUTs using Premiere Pro's Lumetri panel.",
     },
     {
       icon: Zap,

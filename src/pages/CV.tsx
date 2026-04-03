@@ -135,8 +135,6 @@ const CV = () => {
                 <div className="space-y-2 text-sm text-gray-600">
                   <p>• Video Editing & Cutting</p>
                   <p>• Color Grading & LUTs</p>
-                  <p>• Motion Graphics</p>
-                  <p>• Sound Design</p>
                   <p>• Short Form Content</p>
                   <p>• Thumbnail Design</p>
                 </div>

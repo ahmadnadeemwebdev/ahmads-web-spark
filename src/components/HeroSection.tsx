@@ -31,8 +31,8 @@ const HeroSection = () => {
         {/* Description */}
         <div className="max-w-xl animate-reveal" style={{ animationDelay: "0.2s" }}>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I create cinematic edits, viral social media content, and stunning 
-            motion graphics using Premiere Pro, After Effects & DaVinci Resolve.
+            I create cinematic edits and viral social media content 
+            using Adobe Premiere Pro.
           </p>
         </div>
 
