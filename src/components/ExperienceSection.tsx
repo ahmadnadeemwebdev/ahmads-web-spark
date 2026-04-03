@@ -16,10 +16,9 @@ const ExperienceSection = () => {
       title: "Learning & Skill Building",
       company: "Self-taught · Online",
       points: [
-        "Mastered Premiere Pro, After Effects & DaVinci Resolve",
+        "Mastered Adobe Premiere Pro",
         "Studied color science, storytelling & editing psychology",
         "Built portfolio through practice edits and passion projects",
-        "Learned sound design and audio mixing",
       ],
     },
   ];

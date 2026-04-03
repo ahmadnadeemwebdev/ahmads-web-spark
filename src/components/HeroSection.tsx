@@ -24,15 +24,15 @@ const HeroSection = () => {
             className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight leading-[0.9] text-muted-foreground animate-reveal"
             style={{ animationDelay: "0.1s" }}
           >
-            & Motion Designer
+            & Content Creator
           </h1>
         </div>
 
         {/* Description */}
         <div className="max-w-xl animate-reveal" style={{ animationDelay: "0.2s" }}>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            I create cinematic edits, viral social media content, and stunning 
-            motion graphics using Premiere Pro, After Effects & DaVinci Resolve.
+            I create cinematic edits and viral social media content 
+            using Adobe Premiere Pro.
           </p>
         </div>
 

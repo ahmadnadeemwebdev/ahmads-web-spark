@@ -39,7 +39,7 @@ const CV = () => {
                 AHMAD NADEEM
               </h1>
               <p className="text-xl text-orange-600 font-semibold">
-                Video Editor & Motion Designer
+                Video Editor & Content Creator
               </p>
             </div>
             <div className="flex flex-col gap-2 text-sm text-gray-600">
@@ -72,8 +72,8 @@ const CV = () => {
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
                   Creative and detail-oriented Video Editor with 1+ year of experience in creating 
-                  engaging social media content, cinematic edits, and motion graphics. Proficient in 
-                  Adobe Premiere Pro, After Effects, and DaVinci Resolve. Passionate about storytelling 
+                  engaging social media content and cinematic edits. Proficient in 
+                  Adobe Premiere Pro. Passionate about storytelling 
                   through visual media and delivering high-quality content for creators and brands.
                 </p>
               </section>
@@ -121,15 +121,7 @@ const CV = () => {
                 <div className="mb-4">
                   <h3 className="text-orange-600 font-semibold text-sm mb-2">Editing</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Premiere Pro", "DaVinci Resolve", "CapCut", "After Effects"].map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium">{skill}</span>
-                    ))}
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <h3 className="text-orange-600 font-semibold text-sm mb-2">Design</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["Photoshop", "Canva", "Audition"].map((skill) => (
+                    {["Premiere Pro"].map((skill) => (
                       <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium">{skill}</span>
                     ))}
                   </div>
@@ -143,8 +135,6 @@ const CV = () => {
                 <div className="space-y-2 text-sm text-gray-600">
                   <p>• Video Editing & Cutting</p>
                   <p>• Color Grading & LUTs</p>
-                  <p>• Motion Graphics</p>
-                  <p>• Sound Design</p>
                   <p>• Short Form Content</p>
                   <p>• Thumbnail Design</p>
                 </div>
