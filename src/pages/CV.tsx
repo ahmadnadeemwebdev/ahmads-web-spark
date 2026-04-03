@@ -121,15 +121,7 @@ const CV = () => {
                 <div className="mb-4">
                   <h3 className="text-orange-600 font-semibold text-sm mb-2">Editing</h3>
                   <div className="flex flex-wrap gap-2">
-                    {["Premiere Pro", "DaVinci Resolve", "CapCut", "After Effects"].map((skill) => (
-                      <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium">{skill}</span>
-                    ))}
-                  </div>
-                </div>
-                <div className="mb-4">
-                  <h3 className="text-orange-600 font-semibold text-sm mb-2">Design</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {["Photoshop", "Canva", "Audition"].map((skill) => (
+                    {["Premiere Pro"].map((skill) => (
                       <span key={skill} className="px-3 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium">{skill}</span>
                     ))}
                   </div>
