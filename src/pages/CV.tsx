@@ -39,7 +39,7 @@ const CV = () => {
                 AHMAD NADEEM
               </h1>
               <p className="text-xl text-orange-600 font-semibold">
-                Video Editor & Motion Designer
+                Video Editor & Content Creator
               </p>
             </div>
             <div className="flex flex-col gap-2 text-sm text-gray-600">
