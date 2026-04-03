@@ -24,7 +24,7 @@ const HeroSection = () => {
             className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold tracking-tight leading-[0.9] text-muted-foreground animate-reveal"
             style={{ animationDelay: "0.1s" }}
           >
-            & Motion Designer
+            & Content Creator
           </h1>
         </div>
 
