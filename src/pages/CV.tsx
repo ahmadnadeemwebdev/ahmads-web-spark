@@ -71,7 +71,7 @@ const CV = () => {
                   Professional Profile
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
-                  Creative and detail-oriented Video Editor with 2+ years of experience in creating 
+                  Creative and detail-oriented Video Editor with 1+ year of experience in creating 
                   engaging social media content, cinematic edits, and motion graphics. Proficient in 
                   Adobe Premiere Pro, After Effects, and DaVinci Resolve. Passionate about storytelling 
                   through visual media and delivering high-quality content for creators and brands.
