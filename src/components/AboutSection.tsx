@@ -1,11 +1,6 @@
 const AboutSection = () => {
   const tools = [
     "Premiere Pro",
-    "After Effects",
-    "DaVinci Resolve",
-    "Photoshop",
-    "CapCut",
-    "Audition",
   ];
 
   return (
