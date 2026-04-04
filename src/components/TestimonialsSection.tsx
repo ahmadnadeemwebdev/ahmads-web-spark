@@ -1,59 +1,84 @@
-import { Star } from "lucide-react";
+import { Star, Sparkles, Quote } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const TestimonialsSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const testimonials = [
     {
       name: "Client Name",
       role: "YouTuber",
-      content:
-        "Ahmad's editing skills are top-notch. He understood my vision perfectly and delivered cinematic edits that boosted my channel's engagement.",
+      content: "Ahmad's editing skills are top-notch. He understood my vision perfectly and delivered cinematic edits that boosted my channel's engagement.",
       rating: 5,
     },
     {
       name: "Brand Client",
       role: "Business Owner",
-      content:
-        "We hired Ahmad for our social media reels and the results were amazing. He knows how to make content that goes viral.",
+      content: "We hired Ahmad for our social media reels and the results were amazing. He knows how to make content that goes viral.",
       rating: 5,
     },
     {
       name: "Creative Partner",
       role: "Content Creator",
-      content:
-        "His color grading and motion graphics skills really elevated our music video. Professional, creative, and always delivers on time.",
-      rating: 4,
+      content: "His color grading skills really elevated our music video. Professional, creative, and always delivers on time.",
+      rating: 5,
     },
   ];
 
   return (
-    <section id="testimonials" className="py-32 px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="max-w-2xl mb-16">
-          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">
+    <section id="testimonials" ref={sectionRef} className="py-32 px-6 lg:px-8 relative">
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(circle, hsl(200 100% 60% / 0.05) 0%, transparent 70%)" }}
+      />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className={`max-w-2xl mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs text-primary uppercase tracking-widest mb-4">
+            <Sparkles className="w-3 h-3" />
             Testimonials
-          </p>
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight">
-            What Clients Say
+          </div>
+          <h2 className="text-4xl lg:text-6xl font-bold tracking-tight">
+            What Clients <span className="gradient-text-primary">Say</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-5">
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className="border border-border rounded-2xl p-8 hover:bg-muted/20 transition-colors duration-300"
+              className={`glass rounded-2xl p-8 hover:glow-box transition-all duration-500 hover-shine relative group ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="flex gap-0.5 mb-6">
+              <Quote className="w-8 h-8 text-primary/20 mb-4" />
+              <div className="flex gap-0.5 mb-4">
                 {[...Array(t.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-8">
+              <p className="text-muted-foreground leading-relaxed mb-8 text-sm">
                 "{t.content}"
               </p>
-              <div>
-                <p className="font-medium text-sm">{t.name}</p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+                  style={{ background: "linear-gradient(135deg, hsl(var(--glow) / 0.3), hsl(var(--glow-secondary) / 0.3))" }}>
+                  {t.name[0]}
+                </div>
+                <div>
+                  <p className="font-medium text-sm">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
+                </div>
               </div>
             </div>
           ))}
