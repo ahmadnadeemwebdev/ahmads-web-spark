@@ -28,10 +28,10 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: "#home", label: "Work" },
+    { href: "#home", label: "Home" },
     { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#skills", label: "Skills" },
+    { href: "#projects", label: "Work" },
+    { href: "#skills", label: "Services" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -39,13 +39,13 @@ const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-4"
-          : "bg-transparent py-6"
+          ? "glass-strong py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <a href="#home" className="text-lg font-semibold tracking-tight">
-          Ahmad Nadeem
+        <a href="#home" className="text-lg font-bold tracking-tight gradient-text-primary">
+          AN
         </a>
 
         {/* Desktop */}
@@ -56,8 +56,8 @@ const Navigation = () => {
               href={link.href}
               className={`px-4 py-2 text-sm rounded-full transition-all duration-300 ${
                 activeSection === link.href.slice(1)
-                  ? "bg-foreground text-background font-medium"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-primary/20 text-primary font-medium"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
               }`}
             >
               {link.label}
@@ -71,23 +71,23 @@ const Navigation = () => {
         {/* Mobile */}
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
-          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Button variant="ghost" size="icon" onClick={() => setIsMenuOpen(!isMenuOpen)} className="rounded-full">
             {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
         </div>
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 mt-2">
-          <div className="flex flex-col p-4 gap-1">
+        <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl overflow-hidden">
+          <div className="flex flex-col p-3 gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`py-3 px-4 rounded-lg text-sm transition-colors ${
+                className={`py-3 px-4 rounded-xl text-sm transition-colors ${
                   activeSection === link.href.slice(1)
-                    ? "bg-foreground text-background font-medium"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "bg-primary/20 text-primary font-medium"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
