@@ -61,8 +61,9 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" ref={sectionRef} className="py-32 px-6 lg:px-8 relative">
-      <div className="absolute inset-0 bg-dots opacity-20 pointer-events-none" />
-      
+      <div className="absolute inset-0 bg-dots opacity-30 pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 neon-line opacity-30" />
+
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className={`flex flex-col sm:flex-row sm:items-end sm:justify-between mb-16 gap-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
@@ -72,7 +73,7 @@ const ProjectsSection = () => {
               Portfolio
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight">
-              Selected <span className="gradient-text-primary">Work</span>
+              Selected <span className="gradient-text-neon">Work</span>
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm text-sm">
@@ -86,7 +87,7 @@ const ProjectsSection = () => {
             <a
               key={index}
               href="#"
-              className={`group block rounded-2xl overflow-hidden glass hover:glow-box transition-all duration-500 hover-shine ${
+              className={`group block rounded-2xl overflow-hidden glass hover:glow-box-strong transition-all duration-700 hover-shine card-3d ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
@@ -99,8 +100,8 @@ const ProjectsSection = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 {/* Play overlay */}
-                <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center backdrop-blur-sm">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center glow-box"
+                <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-center justify-center backdrop-blur-sm">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center glow-box-strong animate-pulse-neon"
                     style={{ background: "linear-gradient(135deg, hsl(var(--glow)), hsl(var(--glow-secondary)))" }}>
                     <Play className="w-6 h-6 text-white fill-current ml-0.5" />
                   </div>
@@ -124,7 +125,7 @@ const ProjectsSection = () => {
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="px-2.5 py-1 rounded-full text-xs text-muted-foreground bg-muted/50">
+                    <span key={tag} className="px-2.5 py-1 rounded-full text-xs text-muted-foreground bg-muted/50 border border-border/30">
                       {tag}
                     </span>
                   ))}

@@ -38,13 +38,14 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "glass-strong py-3"
-          : "bg-transparent py-5"
+        isScrolled ? "glass-strong py-3" : "bg-transparent py-5"
       }`}
     >
+      {/* Bottom neon line when scrolled */}
+      {isScrolled && <div className="absolute bottom-0 left-0 right-0 neon-line opacity-40" />}
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
-        <a href="#home" className="text-lg font-bold tracking-tight gradient-text-primary">
+        <a href="#home" className="text-xl font-bold tracking-tight gradient-text-neon">
           AN
         </a>
 
@@ -56,7 +57,7 @@ const Navigation = () => {
               href={link.href}
               className={`px-4 py-2 text-sm rounded-full transition-all duration-300 ${
                 activeSection === link.href.slice(1)
-                  ? "bg-primary/20 text-primary font-medium"
+                  ? "bg-primary/20 text-primary font-medium glow-box"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/30"
               }`}
             >
@@ -78,7 +79,7 @@ const Navigation = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl overflow-hidden">
+        <div className="md:hidden glass-strong mt-2 mx-4 rounded-2xl overflow-hidden glow-box">
           <div className="flex flex-col p-3 gap-1">
             {navLinks.map((link) => (
               <a

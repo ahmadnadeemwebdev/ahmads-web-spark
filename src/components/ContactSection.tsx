@@ -16,7 +16,7 @@ const ContactSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -40,9 +40,9 @@ const ContactSection = () => {
 
   return (
     <section id="contact" ref={sectionRef} className="py-32 px-6 lg:px-8 relative">
-      {/* Background glow */}
+      <div className="absolute top-0 left-0 right-0 neon-line opacity-30" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, hsl(270 100% 65% / 0.08) 0%, transparent 70%)" }}
+        style={{ background: "radial-gradient(ellipse, hsl(260 100% 65% / 0.1) 0%, transparent 70%)" }}
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
@@ -56,7 +56,7 @@ const ContactSection = () => {
             <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
               Let's work
               <br />
-              <span className="gradient-text-primary">together</span>
+              <span className="gradient-text-neon">together</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-10">
               Have a project in mind? Send me a message and I'll get back to you within 24 hours.
@@ -65,7 +65,7 @@ const ContactSection = () => {
             {/* Contact info */}
             <div className="space-y-4 mb-10">
               <a href="mailto:ahmadnadeemwebdev@gmail.com" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors group">
-                <div className="w-10 h-10 rounded-xl glass flex items-center justify-center group-hover:glow-box transition-all">
+                <div className="w-10 h-10 rounded-xl glass flex items-center justify-center group-hover:glow-box group-hover:animate-pulse-neon transition-all">
                   <Mail className="w-4 h-4" />
                 </div>
                 ahmadnadeemwebdev@gmail.com
@@ -90,7 +90,7 @@ const ContactSection = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-box transition-all duration-300"
+                  className="w-12 h-12 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:glow-box-strong transition-all duration-300 card-3d"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -100,7 +100,7 @@ const ContactSection = () => {
 
           {/* Form */}
           <form onSubmit={handleSubmit}
-            className={`glass rounded-2xl p-8 space-y-5 glow-box transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+            className={`glass rounded-2xl p-8 space-y-5 glow-box-strong transition-all duration-1000 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
             <div>
               <label className="text-sm text-muted-foreground mb-2 block">Name</label>
               <Input
@@ -136,7 +136,7 @@ const ContactSection = () => {
             <Button
               type="submit"
               size="lg"
-              className="w-full rounded-full h-12 magnetic-btn font-medium"
+              className="w-full rounded-full h-12 magnetic-btn font-semibold glow-box-strong"
               style={{ background: "linear-gradient(135deg, hsl(var(--glow)), hsl(var(--glow-secondary)))", color: "white" }}
               disabled={isLoading}
             >
