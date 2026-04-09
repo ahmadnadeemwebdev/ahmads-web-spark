@@ -1,4 +1,4 @@
-import { Star, Sparkles, Quote } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const TestimonialsSection = () => {
@@ -36,20 +36,12 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-32 px-6 lg:px-8 relative">
-      <div className="absolute top-0 left-0 right-0 neon-line opacity-30" />
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, hsl(190 100% 55% / 0.05) 0%, transparent 70%)" }}
-      />
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className={`max-w-2xl mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs text-primary uppercase tracking-widest mb-4">
-            <Sparkles className="w-3 h-3" />
-            Testimonials
-          </div>
-          <h2 className="text-4xl lg:text-6xl font-bold tracking-tight">
-            What Clients <span className="gradient-text-neon">Say</span>
+    <section id="testimonials" ref={sectionRef} className="py-24 px-6 lg:px-8 bg-secondary/50">
+      <div className="max-w-5xl mx-auto">
+        <div className={`max-w-2xl mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Testimonials</p>
+          <h2 className="text-3xl lg:text-5xl font-bold tracking-tight">
+            What Clients Say
           </h2>
         </div>
 
@@ -57,30 +49,27 @@ const TestimonialsSection = () => {
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className={`card-3d transition-all duration-700 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`bg-background border border-border rounded-2xl p-7 transition-all duration-700 hover:border-foreground/20 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
-              style={{ transitionDelay: `${index * 120}ms` }}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="glass rounded-2xl p-8 hover:glow-box-strong transition-all duration-500 hover-shine relative group h-full">
-                <Quote className="w-8 h-8 text-primary/20 mb-4" />
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                  ))}
+              <Quote className="w-7 h-7 text-muted-foreground/20 mb-4" />
+              <div className="flex gap-0.5 mb-4">
+                {[...Array(t.rating)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
+                ))}
+              </div>
+              <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
+                "{t.content}"
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-sm font-semibold">
+                  {t.name[0]}
                 </div>
-                <p className="text-muted-foreground leading-relaxed mb-8 text-sm">
-                  "{t.content}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold animate-pulse-neon"
-                    style={{ background: "linear-gradient(135deg, hsl(var(--glow) / 0.3), hsl(var(--glow-secondary) / 0.3))" }}>
-                    {t.name[0]}
-                  </div>
-                  <div>
-                    <p className="font-medium text-sm">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.role}</p>
-                  </div>
+                <div>
+                  <p className="font-medium text-sm">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.role}</p>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { ArrowUpRight, Play, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const ProjectsSection = () => {
@@ -60,20 +60,14 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section id="projects" ref={sectionRef} className="py-32 px-6 lg:px-8 relative">
-      <div className="absolute inset-0 bg-dots opacity-30 pointer-events-none" />
-      <div className="absolute top-0 left-0 right-0 neon-line opacity-30" />
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="projects" ref={sectionRef} className="py-24 px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className={`flex flex-col sm:flex-row sm:items-end sm:justify-between mb-16 gap-4 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+        <div className={`flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass text-xs text-primary uppercase tracking-widest mb-4">
-              <Sparkles className="w-3 h-3" />
-              Portfolio
-            </div>
-            <h2 className="text-4xl lg:text-6xl font-bold tracking-tight">
-              Selected <span className="gradient-text-neon">Work</span>
+            <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Portfolio</p>
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight">
+              Selected Work
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm text-sm">
@@ -82,50 +76,41 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <a
               key={index}
               href="#"
-              className={`group block rounded-2xl overflow-hidden glass hover:glow-box-strong transition-all duration-700 hover-shine card-3d ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              className={`group block rounded-2xl overflow-hidden border border-border hover:border-foreground/20 transition-all duration-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
-              {/* Image */}
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
-                {/* Play overlay */}
-                <div className="absolute inset-0 bg-background/70 opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-center justify-center backdrop-blur-sm">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center glow-box-strong animate-pulse-neon"
-                    style={{ background: "linear-gradient(135deg, hsl(var(--glow)), hsl(var(--glow-secondary)))" }}>
-                    <Play className="w-6 h-6 text-white fill-current ml-0.5" />
-                  </div>
-                </div>
-                {/* Category badge */}
-                <span className="absolute top-4 left-4 px-3 py-1 glass rounded-full text-xs font-medium">
+                <span className="absolute top-3 left-3 px-3 py-1 bg-background/90 backdrop-blur-sm rounded-full text-xs font-medium border border-border">
                   {project.category}
                 </span>
               </div>
 
-              {/* Content */}
               <div className="p-5">
                 <div className="flex items-start justify-between gap-2 mb-2">
-                  <h3 className="text-lg font-semibold group-hover:gradient-text-primary transition-all">
+                  <h3 className="font-semibold group-hover:text-foreground transition-colors">
                     {project.title}
                   </h3>
-                  <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all shrink-0 mt-1" />
+                  <ArrowUpRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-0.5" />
                 </div>
                 <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="px-2.5 py-1 rounded-full text-xs text-muted-foreground bg-muted/50 border border-border/30">
+                    <span key={tag} className="px-2.5 py-1 rounded-full text-xs text-muted-foreground bg-secondary">
                       {tag}
                     </span>
                   ))}
