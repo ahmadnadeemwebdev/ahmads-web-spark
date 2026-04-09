@@ -1,10 +1,9 @@
 const Footer = () => {
   return (
-    <footer className="py-8 px-6 lg:px-8 border-t border-border/20 relative">
-      <div className="absolute top-0 left-0 right-0 neon-line opacity-20" />
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <footer className="py-8 px-6 lg:px-8 border-t border-border">
+      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} <span className="gradient-text-neon font-medium">Ahmad Nadeem</span>
+          © {new Date().getFullYear()} Ahmad Nadeem
         </p>
         <p className="text-sm text-muted-foreground">
           Video Editor
