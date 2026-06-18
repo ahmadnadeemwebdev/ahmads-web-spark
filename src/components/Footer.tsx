@@ -6,7 +6,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Ahmad Nadeem
         </p>
         <p className="text-sm text-muted-foreground">
-          Video Editor
+          Video Editor · Graphic Designer · Web Developer
         </p>
       </div>
     </footer>

@@ -13,15 +13,17 @@ const HeroSection = () => {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05] mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-          Video Editor
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+          Video Editor,
           <br />
-          <span className="text-muted-foreground">& Content Creator</span>
+          <span className="text-muted-foreground">Graphic Designer</span>
+          <br />
+          & Web Developer
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-          I craft cinematic edits and scroll-stopping social media content using Adobe Premiere Pro.
+        <p className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          I craft cinematic edits, stunning visuals, and modern websites. From Premiere Pro to Figma to React — I bring ideas to life across every medium.
         </p>
 
         {/* CTA */}
@@ -44,8 +46,8 @@ const HeroSection = () => {
         {/* Stats */}
         <div className="flex gap-12 sm:gap-16 animate-fade-up" style={{ animationDelay: "0.4s" }}>
           {[
+            { value: "1+", label: "Years Exp" },
             { value: "50+", label: "Projects" },
-            { value: "1+", label: "Year Exp" },
             { value: "20+", label: "Clients" },
           ].map((stat) => (
             <div key={stat.label}>

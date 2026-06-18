@@ -22,17 +22,37 @@ const AboutSection = () => {
           <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">About Me</p>
             <h2 className="text-3xl lg:text-5xl font-bold tracking-tight leading-tight mb-6">
-              Crafting stories
+              Turning ideas
               <br />
-              through every frame
+              into reality
             </h2>
-            <div className="inline-flex items-center gap-4 border border-border rounded-2xl p-4">
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
-                <Film className="w-6 h-6 text-primary-foreground" />
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-4 border border-border rounded-2xl p-4 w-full">
+                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0">
+                  <Film className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <div>
+                  <p className="font-semibold">Adobe Premiere Pro</p>
+                  <p className="text-sm text-muted-foreground">Video Editing</p>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold">Adobe Premiere Pro</p>
-                <p className="text-sm text-muted-foreground">Primary Editing Tool</p>
+              <div className="inline-flex items-center gap-4 border border-border rounded-2xl p-4 w-full">
+                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                  <Zap className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-semibold">Figma & Adobe Suite</p>
+                  <p className="text-sm text-muted-foreground">Graphic Design</p>
+                </div>
+              </div>
+              <div className="inline-flex items-center gap-4 border border-border rounded-2xl p-4 w-full">
+                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
+                  <Clock className="w-6 h-6" />
+                </div>
+                <div>
+                  <p className="font-semibold">React & Modern Web</p>
+                  <p className="text-sm text-muted-foreground">Web Development</p>
+                </div>
               </div>
             </div>
           </div>
@@ -40,19 +60,19 @@ const AboutSection = () => {
           {/* Right */}
           <div className={`space-y-6 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I'm <span className="text-foreground font-semibold">Ahmad Nadeem</span> — a video editor based in Lahore, Pakistan.
-              I specialize in creating scroll-stopping content for social media and cinematic brand videos.
+              I'm <span className="text-foreground font-semibold">Ahmad Nadeem</span> — a creative professional based in Lahore, Pakistan.
+              With 1+ years of experience across video editing, graphic design, and web development, I help brands and creators stand out.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              With 1+ year of hands-on experience, I've worked with creators and brands
-              to deliver content that not only looks great but drives real engagement.
+              I recently completed my Intermediate (ICS) and have been building my skills through real projects and continuous learning.
+              Whether it's a cinematic edit, a brand identity, or a modern website — I deliver quality work with fast turnaround.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-2 gap-4 pt-4">
               {[
                 { value: "50+", label: "Projects Done", icon: Zap },
-                { value: "1+", label: "Year Exp", icon: Clock },
+                { value: "1+", label: "Years Exp", icon: Clock },
                 { value: "20+", label: "Happy Clients", icon: Sparkles },
                 { value: "24h", label: "Turnaround", icon: Film },
               ].map((stat) => (
