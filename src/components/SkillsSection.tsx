@@ -1,4 +1,4 @@
-import { Scissors, Palette, Zap, Camera } from "lucide-react";
+import { Scissors, Palette, Zap, Camera, Code2, PenTool } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const SkillsSection = () => {
@@ -35,6 +35,16 @@ const SkillsSection = () => {
       title: "Thumbnail Design",
       description: "Click-worthy thumbnails that drive views and CTR.",
     },
+    {
+      icon: PenTool,
+      title: "Graphic Design",
+      description: "Brand identities, social media graphics, posters & visual assets in Figma & Photoshop.",
+    },
+    {
+      icon: Code2,
+      title: "Web Development",
+      description: "Modern, responsive websites built with React, Tailwind CSS & best practices.",
+    },
   ];
 
   return (
@@ -46,11 +56,11 @@ const SkillsSection = () => {
             What I Do
           </h2>
           <p className="text-muted-foreground">
-            Skills honed through hundreds of hours of editing and real client projects.
+            A versatile skill set honed through real projects and continuous learning.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {skills.map((skill, index) => (
             <div
               key={skill.title}

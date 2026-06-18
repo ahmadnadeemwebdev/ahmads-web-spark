@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Send, Loader2, Instagram, Youtube, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, Instagram, Youtube, ArrowUpRight, Globe } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -51,7 +51,7 @@ const ContactSection = () => {
               together
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-10">
-              Have a project in mind? Send me a message and I'll get back to you within 24 hours.
+              Have a project in mind? Whether it's video editing, design, or web development — send me a message and I'll get back to you within 24 hours.
             </p>
 
             <div className="space-y-4 mb-10">
@@ -74,6 +74,7 @@ const ContactSection = () => {
               {[
                 { icon: Youtube, href: "https://youtube.com/@ahmadnadeem", label: "YouTube" },
                 { icon: Instagram, href: "https://instagram.com/ahmadnadeem", label: "Instagram" },
+                { icon: Globe, href: "#", label: "Website" },
               ].map((social) => (
                 <a
                   key={social.label}
@@ -115,7 +116,7 @@ const ContactSection = () => {
             <div>
               <label className="text-sm text-muted-foreground mb-2 block">Project Details</label>
               <Textarea
-                placeholder="Tell me about your video project..."
+                placeholder="Tell me about your video, design, or web project..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required

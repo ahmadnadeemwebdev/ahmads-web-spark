@@ -16,12 +16,13 @@ const ExperienceSection = () => {
   const experiences = [
     {
       period: "2024 — Present",
-      title: "Freelance Video Editor",
+      title: "Freelance Creative Professional",
       company: "Self-Employed · Remote",
       points: [
-        "Edited 50+ short-form videos for social media clients",
-        "Created cinematic edits with professional color grading",
-        "Maintained fast turnaround with high client satisfaction",
+        "Edited 50+ short-form videos and long-form content for social media clients",
+        "Designed brand identities, social media graphics, and marketing assets",
+        "Built and deployed modern responsive websites for small businesses",
+        "Maintained fast turnaround with high client satisfaction across all services",
       ],
     },
     {
@@ -29,9 +30,20 @@ const ExperienceSection = () => {
       title: "Learning & Skill Building",
       company: "Self-taught · Online",
       points: [
-        "Mastered Adobe Premiere Pro",
-        "Studied color science, storytelling & editing psychology",
-        "Built portfolio through practice edits and passion projects",
+        "Mastered Adobe Premiere Pro, Figma, and Photoshop",
+        "Learned React, Tailwind CSS, and modern web development",
+        "Studied color science, typography, and design principles",
+        "Built portfolio through practice projects and real client work",
+      ],
+    },
+    {
+      period: "2023 — 2025",
+      title: "Intermediate (ICS)",
+      company: "College Education",
+      points: [
+        "Completed Intermediate in Computer Science (ICS)",
+        "Built strong foundation in programming and computer fundamentals",
+        "Balanced academics with freelancing and skill development",
       ],
     },
   ];

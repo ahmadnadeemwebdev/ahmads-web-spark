@@ -17,45 +17,45 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: "Brand Commercial",
-      category: "Commercial",
+      category: "Video",
       description: "High-energy brand commercial with cinematic color grading and dynamic text animations.",
       image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=500&fit=crop",
       tags: ["Premiere Pro", "Color Grading"],
     },
     {
-      title: "YouTube Content",
-      category: "Long Form",
-      description: "Full video editing for tech content including cuts, sound design, and custom animations.",
-      image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&h=500&fit=crop",
-      tags: ["Premiere Pro", "Sound Design"],
-    },
-    {
-      title: "Instagram Reels",
-      category: "Short Form",
+      title: "Social Media Reels",
+      category: "Video",
       description: "Viral-worthy reels with trending transitions, beat-synced cuts, and eye-catching overlays.",
       image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=500&fit=crop",
       tags: ["Premiere Pro", "Reels"],
     },
     {
-      title: "Music Video",
-      category: "Cinematic",
-      description: "Cinematic music video with speed ramps and creative transitions.",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=500&fit=crop",
-      tags: ["Premiere Pro", "Color Grading"],
+      title: "Brand Identity Design",
+      category: "Design",
+      description: "Complete brand package including logo, color palette, and social media templates.",
+      image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=500&fit=crop",
+      tags: ["Figma", "Branding"],
     },
     {
-      title: "Podcast Edit",
-      category: "Long Form",
-      description: "Multi-camera podcast with dynamic captions, background music, and clean audio.",
-      image: "https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&h=500&fit=crop",
-      tags: ["Premiere Pro", "Audio"],
+      title: "Portfolio Website",
+      category: "Web",
+      description: "Modern responsive portfolio built with React and Tailwind CSS for a creative client.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+      tags: ["React", "Tailwind"],
     },
     {
-      title: "Product Showcase",
-      category: "Commercial",
-      description: "Sleek product video with smooth movements and premium color treatment.",
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=500&fit=crop",
-      tags: ["Premiere Pro", "Color Grading"],
+      title: "YouTube Content",
+      category: "Video",
+      description: "Full video editing for tech content including cuts, sound design, and custom animations.",
+      image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&h=500&fit=crop",
+      tags: ["Premiere Pro", "Sound Design"],
+    },
+    {
+      title: "Marketing Graphics",
+      category: "Design",
+      description: "Eye-catching social media posts, banners, and promotional materials for multiple brands.",
+      image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop",
+      tags: ["Photoshop", "Social Media"],
     },
   ];
 
@@ -71,7 +71,7 @@ const ProjectsSection = () => {
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm text-sm">
-            A collection of my best video editing projects across different styles and formats.
+            A mix of video editing, graphic design, and web development projects.
           </p>
         </div>
 
