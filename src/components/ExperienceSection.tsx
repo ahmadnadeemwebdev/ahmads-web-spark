@@ -16,23 +16,23 @@ const ExperienceSection = () => {
   const experiences = [
     {
       period: "2024 — Present",
-      title: "Freelance Creative Professional",
+      title: "Freelance Designer & Web Developer",
       company: "Self-Employed · Remote",
       points: [
-        "Edited 50+ short-form videos and long-form content for social media clients",
-        "Designed brand identities, social media graphics, and marketing assets",
-        "Built and deployed modern responsive websites for small businesses",
-        "Maintained fast turnaround with high client satisfaction across all services",
+        "Designed brand identities, logos, and social media kits for 15+ clients",
+        "Built responsive React websites and landing pages for small businesses",
+        "Delivered Figma → React handoffs with pixel-perfect implementation",
+        "Maintained fast turnaround with high client satisfaction",
       ],
     },
     {
       period: "2023 — 2024",
-      title: "Learning & Skill Building",
-      company: "Self-taught · Online",
+      title: "Self-Taught Skill Building",
+      company: "Online · Practice Projects",
       points: [
-        "Mastered Adobe Premiere Pro, Figma, and Photoshop",
-        "Learned React, Tailwind CSS, and modern web development",
-        "Studied color science, typography, and design principles",
+        "Mastered Figma, Photoshop and Illustrator for design workflows",
+        "Learned React, TypeScript, Tailwind CSS and modern web tooling",
+        "Studied typography, color theory and design systems",
         "Built portfolio through practice projects and real client work",
       ],
     },
@@ -52,8 +52,8 @@ const ExperienceSection = () => {
     <section id="experience" ref={sectionRef} className="py-24 px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         <div className={`max-w-2xl mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Experience</p>
-          <h2 className="text-3xl lg:text-5xl font-bold tracking-tight">
+          <p className="text-sm text-primary uppercase tracking-widest mb-4">— Experience</p>
+          <h2 className="text-4xl lg:text-6xl uppercase tracking-tight">
             My Journey
           </h2>
         </div>

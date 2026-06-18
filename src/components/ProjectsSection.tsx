@@ -16,46 +16,46 @@ const ProjectsSection = () => {
 
   const projects = [
     {
-      title: "Brand Commercial",
-      category: "Video",
-      description: "High-energy brand commercial with cinematic color grading and dynamic text animations.",
-      image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=500&fit=crop",
-      tags: ["Premiere Pro", "Color Grading"],
-    },
-    {
-      title: "Social Media Reels",
-      category: "Video",
-      description: "Viral-worthy reels with trending transitions, beat-synced cuts, and eye-catching overlays.",
-      image: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&h=500&fit=crop",
-      tags: ["Premiere Pro", "Reels"],
-    },
-    {
-      title: "Brand Identity Design",
+      title: "Brand Identity System",
       category: "Design",
-      description: "Complete brand package including logo, color palette, and social media templates.",
+      description: "Complete brand package — logo, color palette, typography & social templates for a lifestyle brand.",
       image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=500&fit=crop",
       tags: ["Figma", "Branding"],
     },
     {
-      title: "Portfolio Website",
+      title: "SaaS Landing Page",
       category: "Web",
-      description: "Modern responsive portfolio built with React and Tailwind CSS for a creative client.",
+      description: "Conversion-focused React landing page with smooth animations and dark mode support.",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
       tags: ["React", "Tailwind"],
     },
     {
-      title: "YouTube Content",
-      category: "Video",
-      description: "Full video editing for tech content including cuts, sound design, and custom animations.",
-      image: "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&h=500&fit=crop",
-      tags: ["Premiere Pro", "Sound Design"],
+      title: "Logo Collection",
+      category: "Design",
+      description: "Selection of wordmark and emblem logos crafted for small businesses and creators.",
+      image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=500&fit=crop",
+      tags: ["Illustrator", "Logo"],
     },
     {
-      title: "Marketing Graphics",
+      title: "Portfolio Website",
+      category: "Web",
+      description: "Modern responsive portfolio built with React, TypeScript and Tailwind CSS.",
+      image: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?w=800&h=500&fit=crop",
+      tags: ["React", "TypeScript"],
+    },
+    {
+      title: "Social Media Kit",
       category: "Design",
-      description: "Eye-catching social media posts, banners, and promotional materials for multiple brands.",
+      description: "Eye-catching Instagram posts, story templates and promotional graphics for brands.",
       image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=500&fit=crop",
-      tags: ["Photoshop", "Social Media"],
+      tags: ["Photoshop", "Social"],
+    },
+    {
+      title: "E-commerce UI",
+      category: "Web",
+      description: "Product page redesign with crisp typography, custom cart drawer and smooth checkout flow.",
+      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=500&fit=crop",
+      tags: ["React", "UI/UX"],
     },
   ];
 
@@ -65,13 +65,13 @@ const ProjectsSection = () => {
         {/* Header */}
         <div className={`flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div>
-            <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Portfolio</p>
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight">
+            <p className="text-sm text-primary uppercase tracking-widest mb-4">— Portfolio</p>
+            <h2 className="text-4xl lg:text-6xl uppercase tracking-tight">
               Selected Work
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm text-sm">
-            A mix of video editing, graphic design, and web development projects.
+            A mix of graphic design and web development projects from recent freelance work.
           </p>
         </div>
 
