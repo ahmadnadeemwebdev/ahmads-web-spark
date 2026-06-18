@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Send, Loader2, Instagram, Youtube, ArrowUpRight, Globe } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, Instagram, ArrowUpRight, Globe } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -44,14 +44,14 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left */}
           <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Contact</p>
-            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight mb-6">
+            <p className="text-sm text-primary uppercase tracking-widest mb-4">— Contact</p>
+            <h2 className="text-4xl lg:text-6xl uppercase tracking-tight mb-6">
               Let's work
               <br />
-              together
+              <span className="text-primary">together</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-10">
-              Have a project in mind? Whether it's video editing, design, or web development — send me a message and I'll get back to you within 24 hours.
+              Need a brand identity, logo, or a fresh website? Send me a message and I'll get back to you within 24 hours.
             </p>
 
             <div className="space-y-4 mb-10">
@@ -72,7 +72,6 @@ const ContactSection = () => {
 
             <div className="flex gap-3">
               {[
-                { icon: Youtube, href: "https://youtube.com/@ahmadnadeem", label: "YouTube" },
                 { icon: Instagram, href: "https://instagram.com/ahmadnadeem", label: "Instagram" },
                 { icon: Globe, href: "#", label: "Website" },
               ].map((social) => (
@@ -81,7 +80,7 @@ const ContactSection = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
+                  className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-accent/10 transition-colors"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -116,7 +115,7 @@ const ContactSection = () => {
             <div>
               <label className="text-sm text-muted-foreground mb-2 block">Project Details</label>
               <Textarea
-                placeholder="Tell me about your video, design, or web project..."
+                placeholder="Tell me about your design or web project..."
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 required

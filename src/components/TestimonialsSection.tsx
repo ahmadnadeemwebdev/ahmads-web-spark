@@ -16,31 +16,31 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: "Client Name",
-      role: "YouTuber",
-      content: "Ahmad's editing skills are top-notch. He understood my vision perfectly and delivered cinematic edits that boosted my channel's engagement.",
-      rating: 5,
-    },
-    {
       name: "Brand Client",
-      role: "Business Owner",
-      content: "We hired Ahmad for our social media reels and the results were amazing. He knows how to make content that goes viral.",
+      role: "Startup Founder",
+      content: "Ahmad delivered a complete brand identity that perfectly captured our vision. Clean, modern, and on-time.",
       rating: 5,
     },
     {
-      name: "Creative Partner",
+      name: "Small Business",
+      role: "Business Owner",
+      content: "He built our website from scratch — fast, responsive, and beautifully designed. Exceeded expectations.",
+      rating: 5,
+    },
+    {
+      name: "Creator",
       role: "Content Creator",
-      content: "His color grading skills really elevated our music video. Professional, creative, and always delivers on time.",
+      content: "Amazing logo and social media kit. Professional, creative, and always responsive to feedback.",
       rating: 5,
     },
   ];
 
   return (
-    <section id="testimonials" ref={sectionRef} className="py-24 px-6 lg:px-8 bg-secondary/50">
-      <div className="max-w-5xl mx-auto">
+    <section id="testimonials" ref={sectionRef} className="py-24 px-6 lg:px-8 bg-secondary/40">
+      <div className="max-w-6xl mx-auto">
         <div className={`max-w-2xl mb-12 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="text-sm text-muted-foreground uppercase tracking-widest mb-4">Testimonials</p>
-          <h2 className="text-3xl lg:text-5xl font-bold tracking-tight">
+          <p className="text-sm text-primary uppercase tracking-widest mb-4">— Testimonials</p>
+          <h2 className="text-4xl lg:text-6xl uppercase tracking-tight">
             What Clients Say
           </h2>
         </div>
@@ -49,22 +49,22 @@ const TestimonialsSection = () => {
           {testimonials.map((t, index) => (
             <div
               key={index}
-              className={`bg-background border border-border rounded-2xl p-7 transition-all duration-700 hover:border-foreground/20 ${
+              className={`bg-background border border-border rounded-2xl p-7 transition-all duration-700 hover:border-primary/40 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <Quote className="w-7 h-7 text-muted-foreground/20 mb-4" />
+              <Quote className="w-7 h-7 text-primary/30 mb-4" />
               <div className="flex gap-0.5 mb-4">
                 {[...Array(t.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-foreground text-foreground" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
               <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
                 "{t.content}"
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center text-sm font-semibold">
+                <div className="w-9 h-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-semibold">
                   {t.name[0]}
                 </div>
                 <div>

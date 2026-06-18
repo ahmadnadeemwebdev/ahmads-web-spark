@@ -11,7 +11,7 @@ interface Message {
 const AIChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: "assistant", content: "Hi! I'm Ahmad's AI assistant. Ask me anything about his video editing services!" }
+    { role: "assistant", content: "Hi! I'm Ahmad's AI assistant. Ask me about his graphic design or web development services!" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +42,7 @@ const AIChatBot = () => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
         },
-        body: JSON.stringify({ messages: [...messages, userMessage].filter(m => m.role !== "assistant" || m.content !== "Hi! I'm Ahmad's AI assistant. Ask me anything about his video editing services!") }),
+        body: JSON.stringify({ messages: [...messages, userMessage].filter(m => m.role !== "assistant" || !m.content.startsWith("Hi! I'm Ahmad's AI assistant")) }),
       });
 
       if (!response.ok) {
@@ -122,7 +122,7 @@ const AIChatBot = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-sm">AI Assistant</h3>
-                <p className="text-xs text-muted-foreground">Ask about Ahmad's editing services</p>
+                <p className="text-xs text-muted-foreground">Ask about design & web services</p>
               </div>
             </div>
           </div>
