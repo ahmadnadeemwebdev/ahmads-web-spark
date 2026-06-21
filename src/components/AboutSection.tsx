@@ -6,72 +6,62 @@ const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.15 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    const o = new IntersectionObserver(([e]) => e.isIntersecting && setIsVisible(true), { threshold: 0.15 });
+    if (sectionRef.current) o.observe(sectionRef.current);
+    return () => o.disconnect();
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 px-6 lg:px-8 bg-secondary/40">
+    <section id="about" ref={sectionRef} className="py-24 px-6 lg:px-8 border-t-2 border-foreground bg-secondary/60">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16">
-          <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <p className="text-sm text-primary uppercase tracking-widest mb-4">— About Me</p>
-            <h2 className="text-4xl lg:text-6xl uppercase tracking-tight leading-[0.95] mb-6">
-              Designing
-              <br />
-              <span className="text-primary">& Building</span>
-              <br />
-              with intent
+        <div className="flex items-center gap-3 mb-10">
+          <span className="w-10 h-10 bg-primary border-2 border-foreground flex items-center justify-center font-display text-lg">01</span>
+          <span className="font-bold uppercase tracking-widest text-xs">About</span>
+          <div className="flex-1 h-0.5 bg-foreground" />
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-8">
+          {/* Big statement */}
+          <div className={`lg:col-span-7 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <h2 className="font-display text-5xl lg:text-7xl uppercase leading-[0.9]">
+              Designing<br />
+              <span className="inline-block bg-foreground text-background px-3">& building</span><br />
+              with <span className="text-primary">intent.</span>
             </h2>
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-4 border border-border rounded-2xl p-4 w-full bg-background">
-                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0">
-                  <Palette className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <p className="font-semibold">Figma · Photoshop · Illustrator</p>
-                  <p className="text-sm text-muted-foreground">Graphic Design</p>
-                </div>
+
+            <p className="mt-8 text-lg leading-snug font-medium max-w-xl">
+              I'm <span className="bg-accent px-1.5 font-bold">Ahmad Nadeem</span> — graphic designer & web developer from Lahore. Just wrapped my Intermediate (ICS) and freelancing 1+ years across design and code.
+            </p>
+            <p className="mt-4 text-base text-muted-foreground leading-relaxed max-w-xl">
+              I live in the overlap — brand identities that translate cleanly into living websites. Fast turnaround, clean execution, no fluff.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <div className="inline-flex items-center gap-3 bg-background border-2 border-foreground px-4 py-3 shadow-brutal-sm">
+                <Palette className="w-5 h-5 text-primary" />
+                <span className="font-bold uppercase text-sm">Figma · PS · AI</span>
               </div>
-              <div className="inline-flex items-center gap-4 border border-border rounded-2xl p-4 w-full bg-background">
-                <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center shrink-0">
-                  <Code2 className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <p className="font-semibold">React · TypeScript · Tailwind</p>
-                  <p className="text-sm text-muted-foreground">Web Development</p>
-                </div>
+              <div className="inline-flex items-center gap-3 bg-background border-2 border-foreground px-4 py-3 shadow-brutal-sm">
+                <Code2 className="w-5 h-5 text-primary" />
+                <span className="font-bold uppercase text-sm">React · TS · Tailwind</span>
               </div>
             </div>
           </div>
 
-          <div className={`space-y-6 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              I'm <span className="text-foreground font-semibold">Ahmad Nadeem</span> — a graphic designer and web developer based in Lahore, Pakistan.
-              I just completed my Intermediate (ICS) and have been freelancing for 1+ years across design and web.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              I love the overlap between design and code — crafting brand identities that translate cleanly into living, breathing websites. Fast turnaround, clean execution.
-            </p>
-
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {[
-                { value: "40+", label: "Projects Done", icon: Sparkles },
-                { value: "1+", label: "Years Exp", icon: Layers },
-                { value: "15+", label: "Happy Clients", icon: Palette },
-                { value: "24h", label: "Avg. Reply", icon: Code2 },
-              ].map((stat) => (
-                <div key={stat.label} className="border border-border rounded-2xl p-5 bg-background hover:border-primary/40 transition-colors">
-                  <stat.icon className="w-4 h-4 text-primary mb-2" />
-                  <p className="text-2xl font-display">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+          {/* Stats stack — offset broken-grid */}
+          <div className={`lg:col-span-5 grid grid-cols-2 gap-4 transition-all duration-700 delay-200 ${isVisible ? "opacity-100" : "opacity-0"}`}>
+            {[
+              { value: "40+", label: "Projects shipped", icon: Sparkles, bg: "bg-primary", rot: "rotate-2" },
+              { value: "1+", label: "Years freelance", icon: Layers, bg: "bg-accent", rot: "-rotate-2" },
+              { value: "15+", label: "Happy clients", icon: Palette, bg: "bg-background", rot: "-rotate-1" },
+              { value: "24h", label: "Avg. reply", icon: Code2, bg: "bg-background", rot: "rotate-1" },
+            ].map((s) => (
+              <div key={s.label} className={`${s.bg} border-2 border-foreground p-5 shadow-brutal brutal-hover ${s.rot}`}>
+                <s.icon className="w-5 h-5 mb-3" />
+                <p className="font-display text-5xl leading-none">{s.value}</p>
+                <p className="text-xs font-bold uppercase mt-2">{s.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

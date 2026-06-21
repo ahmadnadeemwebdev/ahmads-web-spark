@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Send, Loader2, Instagram, ArrowUpRight, Globe } from "lucide-react";
@@ -14,12 +13,9 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.15 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+    const o = new IntersectionObserver(([e]) => e.isIntersecting && setIsVisible(true), { threshold: 0.15 });
+    if (sectionRef.current) o.observe(sectionRef.current);
+    return () => o.disconnect();
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -31,42 +27,41 @@ const ContactSection = () => {
       toast({ title: "Message sent!", description: "Thank you for reaching out. I'll get back to you soon!" });
       setFormData({ name: "", email: "", message: "" });
     } catch (error: any) {
-      console.error("Error sending message:", error);
-      toast({ title: "Failed to send message", description: error.message || "Please try again later.", variant: "destructive" });
+      toast({ title: "Failed to send", description: error.message || "Please try again.", variant: "destructive" });
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left */}
-          <div className={`transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-            <p className="text-sm text-primary uppercase tracking-widest mb-4">— Contact</p>
-            <h2 className="text-4xl lg:text-6xl uppercase tracking-tight mb-6">
-              Let's work
-              <br />
-              <span className="text-primary">together</span>
+    <section id="contact" ref={sectionRef} className="py-24 px-6 lg:px-8 border-t-2 border-foreground bg-foreground text-background">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-center gap-3 mb-10">
+          <span className="w-10 h-10 bg-primary text-primary-foreground border-2 border-background flex items-center justify-center font-display text-lg">06</span>
+          <span className="font-bold uppercase tracking-widest text-xs">Contact</span>
+          <div className="flex-1 h-0.5 bg-background" />
+        </div>
+
+        <div className="grid lg:grid-cols-12 gap-10">
+          <div className={`lg:col-span-6 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <h2 className="font-display text-6xl lg:text-8xl uppercase leading-[0.85] mb-6">
+              Let's<br />
+              <span className="inline-block bg-primary text-primary-foreground px-3">make</span><br />
+              <span className="inline-block bg-accent text-accent-foreground px-3">stuff.</span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-10">
-              Need a brand identity, logo, or a fresh website? Send me a message and I'll get back to you within 24 hours.
+            <p className="text-lg max-w-md mb-10 font-medium">
+              Need a brand identity, logo, or fresh website? Drop a message — I reply within 24h.
             </p>
 
-            <div className="space-y-4 mb-10">
-              <a href="mailto:ahmadnadeemwebdev@gmail.com" className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center">
-                  <Mail className="w-4 h-4" />
-                </div>
-                ahmadnadeemwebdev@gmail.com
-                <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="space-y-3 mb-8">
+              <a href="mailto:ahmadnadeemwebdev@gmail.com" className="flex items-center gap-3 bg-background text-foreground border-2 border-background px-4 py-3 hover:bg-primary hover:text-primary-foreground transition-colors group">
+                <Mail className="w-5 h-5" />
+                <span className="font-bold text-sm">ahmadnadeemwebdev@gmail.com</span>
+                <ArrowUpRight className="w-4 h-4 ml-auto opacity-0 group-hover:opacity-100" />
               </a>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                Lahore, Pakistan
+              <div className="flex items-center gap-3 px-4 py-3 border-2 border-background">
+                <MapPin className="w-5 h-5" />
+                <span className="font-bold text-sm">Lahore, Pakistan</span>
               </div>
             </div>
 
@@ -74,64 +69,46 @@ const ContactSection = () => {
               {[
                 { icon: Instagram, href: "https://instagram.com/ahmadnadeem", label: "Instagram" },
                 { icon: Globe, href: "#", label: "Website" },
-              ].map((social) => (
+              ].map((s) => (
                 <a
-                  key={social.label}
-                  href={social.href}
+                  key={s.label}
+                  href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-accent/10 transition-colors"
+                  className="w-12 h-12 bg-background text-foreground border-2 border-background flex items-center justify-center hover:bg-accent transition-colors"
+                  aria-label={s.label}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <s.icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleSubmit}
-            className={`border border-border rounded-2xl p-8 space-y-5 transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <form
+            onSubmit={handleSubmit}
+            className={`lg:col-span-6 bg-background text-foreground border-2 border-background p-8 space-y-5 shadow-brutal-lg transition-all duration-700 delay-200 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            style={{ boxShadow: "10px 10px 0 0 hsl(var(--primary))" }}
+          >
             <div>
-              <label className="text-sm text-muted-foreground mb-2 block">Name</label>
-              <Input
-                placeholder="Your name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                className="bg-secondary/50 border-border rounded-xl h-12"
-              />
+              <label className="text-xs font-bold uppercase tracking-wider mb-2 block">Name</label>
+              <Input value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Your name" required className="bg-background border-2 border-foreground rounded-none h-12 font-medium focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
             </div>
             <div>
-              <label className="text-sm text-muted-foreground mb-2 block">Email</label>
-              <Input
-                type="email"
-                placeholder="you@example.com"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="bg-secondary/50 border-border rounded-xl h-12"
-              />
+              <label className="text-xs font-bold uppercase tracking-wider mb-2 block">Email</label>
+              <Input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="you@example.com" required className="bg-background border-2 border-foreground rounded-none h-12 font-medium focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
             </div>
             <div>
-              <label className="text-sm text-muted-foreground mb-2 block">Project Details</label>
-              <Textarea
-                placeholder="Tell me about your design or web project..."
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-                rows={5}
-                className="bg-secondary/50 border-border resize-none rounded-xl"
-              />
+              <label className="text-xs font-bold uppercase tracking-wider mb-2 block">Project Details</label>
+              <Textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Tell me about your project..." required rows={5} className="bg-background border-2 border-foreground rounded-none font-medium resize-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
             </div>
-            <Button
+            <button
               type="submit"
-              size="lg"
-              className="w-full rounded-full h-12 font-medium"
               disabled={isLoading}
+              className="w-full h-14 bg-primary text-primary-foreground border-2 border-foreground font-bold uppercase tracking-wider shadow-brutal brutal-hover flex items-center justify-center gap-2 disabled:opacity-60"
             >
-              {isLoading ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
+              {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
               {isLoading ? "Sending..." : "Send Message"}
-            </Button>
+            </button>
           </form>
         </div>
       </div>
