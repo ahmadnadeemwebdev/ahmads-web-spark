@@ -14,9 +14,16 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Hind', 'system-ui', 'sans-serif'],
-        display: ['"Archivo Black"', 'sans-serif'],
+        sans: ['Barlow', 'system-ui', 'sans-serif'],
+        display: ['"Bebas Neue"', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+      },
+      boxShadow: {
+        brutal: '6px 6px 0 0 hsl(var(--foreground))',
+        'brutal-sm': '4px 4px 0 0 hsl(var(--foreground))',
+        'brutal-lg': '10px 10px 0 0 hsl(var(--foreground))',
+        'brutal-primary': '6px 6px 0 0 hsl(var(--primary))',
+        'brutal-accent': '6px 6px 0 0 hsl(var(--accent))',
       },
       colors: {
         border: "hsl(var(--border))",
