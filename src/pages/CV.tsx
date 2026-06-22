@@ -1,7 +1,7 @@
 import { ArrowLeft, Download, Mail, MapPin, Instagram, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { useDocumentHead } from "@/hooks/useDocumentHead";
 
 const CV = () => {
   const handleDownload = () => {
