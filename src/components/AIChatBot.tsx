@@ -108,6 +108,7 @@ const AIChatBot = () => {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close chat" : "Open AI chat assistant"}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg hover:shadow-primary/30 hover:scale-105 transition-all duration-300 flex items-center justify-center"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
@@ -158,13 +159,17 @@ const AIChatBot = () => {
           </div>
 
           <div className="p-4 border-t border-border/50">
+            <label htmlFor="chat-input" className="sr-only">Type your message</label>
             <div className="flex gap-2">
               <input
+                id="chat-input"
+                name="chat-input"
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
                 placeholder="Type a message..."
+                aria-label="Chat message"
                 className="flex-1 px-4 py-2 rounded-full bg-background/50 border border-border text-sm focus:outline-none focus:border-primary transition-colors"
                 disabled={isLoading}
               />
@@ -172,6 +177,7 @@ const AIChatBot = () => {
                 size="icon"
                 onClick={sendMessage}
                 disabled={isLoading || !input.trim()}
+                aria-label="Send message"
                 className="rounded-full w-10 h-10"
               >
                 <Send className="w-4 h-4" />

@@ -17,6 +17,14 @@ const HeroSection = () => {
       <div className="hidden lg:block absolute top-32 right-20 w-28 h-28 bg-accent border-2 border-foreground rotate-12 shadow-brutal" />
       <div className="hidden lg:block absolute bottom-40 left-16 w-20 h-20 bg-primary border-2 border-foreground -rotate-6 rounded-full shadow-brutal-sm" />
 
+      {/* Signature stamp — personality marker */}
+      <div className="hidden md:flex absolute top-28 right-6 lg:right-12 z-10 flex-col items-center justify-center w-32 h-32 rounded-full border-2 border-foreground bg-background rotate-[14deg] shadow-brutal-sm">
+        <div className="absolute inset-2 rounded-full border-2 border-dashed border-foreground/40" />
+        <span className="font-display text-3xl leading-none text-primary">AN</span>
+        <span className="text-[9px] font-black uppercase tracking-[0.2em] mt-1">Design × Code</span>
+        <span className="text-[8px] font-bold uppercase tracking-widest mt-0.5">EST. 2024</span>
+      </div>
+
       <div className="max-w-6xl mx-auto w-full relative">
         {/* Tag */}
         <div className="mb-6 animate-fade-up flex flex-wrap items-center gap-3">
