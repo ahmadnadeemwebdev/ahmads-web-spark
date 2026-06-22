@@ -1,0 +1,10 @@
+# Ahmad Nadeem — Graphic Designer & Web Developer
+
+> Portfolio of Ahmad Nadeem, a Lahore-based freelance graphic designer and web developer specializing in brand identity, logo design, and modern React websites.
+
+Ahmad Nadeem is a freelance creative with 1+ years of experience across both visual design and frontend web development. Services include brand identity systems, logo design, social media kits, and full website builds using React, TypeScript, and Tailwind CSS. Based in Lahore, Pakistan; available worldwide.
+
+## Pages
+
+- [Home](/): Overview of services, work, experience, and contact.
+- [CV](/cv): Full professional CV with downloadable PDF.
