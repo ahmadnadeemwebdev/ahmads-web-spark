@@ -90,16 +90,16 @@ const ContactSection = () => {
             style={{ boxShadow: "10px 10px 0 0 hsl(var(--primary))" }}
           >
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider mb-2 block">Name</label>
-              <Input value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Your name" required className="bg-background border-2 border-foreground rounded-none h-12 font-medium focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
+              <label htmlFor="contact-name" className="text-xs font-bold uppercase tracking-wider mb-2 block">Name</label>
+              <Input id="contact-name" name="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="Your name" required maxLength={100} className="bg-background border-2 border-foreground rounded-none h-12 font-medium focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider mb-2 block">Email</label>
-              <Input type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="you@example.com" required className="bg-background border-2 border-foreground rounded-none h-12 font-medium focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
+              <label htmlFor="contact-email" className="text-xs font-bold uppercase tracking-wider mb-2 block">Email</label>
+              <Input id="contact-email" name="email" type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="you@example.com" required maxLength={255} className="bg-background border-2 border-foreground rounded-none h-12 font-medium focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
             </div>
             <div>
-              <label className="text-xs font-bold uppercase tracking-wider mb-2 block">Project Details</label>
-              <Textarea value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Tell me about your project..." required rows={5} className="bg-background border-2 border-foreground rounded-none font-medium resize-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
+              <label htmlFor="contact-message" className="text-xs font-bold uppercase tracking-wider mb-2 block">Project Details</label>
+              <Textarea id="contact-message" name="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Tell me about your project..." required rows={5} maxLength={2000} className="bg-background border-2 border-foreground rounded-none font-medium resize-none focus-visible:ring-0 focus-visible:ring-offset-0 focus-visible:border-primary" />
             </div>
             <button
               type="submit"
