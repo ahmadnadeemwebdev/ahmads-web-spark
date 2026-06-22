@@ -12,24 +12,18 @@ const CV = () => {
     link.click();
     document.body.removeChild(link);
   };
+  useDocumentHead({
+    title: "Ahmad Nadeem | Professional CV",
+    description:
+      "Professional CV of Ahmad Nadeem — Graphic Designer & Web Developer in Lahore, Pakistan. Brand identity, logo design, React websites. Download PDF.",
+    canonical: "https://ahmads-web-spark.lovable.app/cv",
+    ogDescription: "Full CV — Graphic Designer & Web Developer based in Lahore, Pakistan.",
+    ogType: "profile",
+  });
 
   return (
     <div className="min-h-screen bg-background py-8 px-4">
-      <Helmet>
-        <title>Ahmad Nadeem | Professional CV</title>
-        <meta
-          name="description"
-          content="Professional CV of Ahmad Nadeem — Graphic Designer & Web Developer in Lahore, Pakistan. Brand identity, logo design, React websites. Download PDF."
-        />
-        <link rel="canonical" href="https://ahmads-web-spark.lovable.app/cv" />
-        <meta property="og:title" content="Ahmad Nadeem | Professional CV" />
-        <meta
-          property="og:description"
-          content="Full CV — Graphic Designer & Web Developer based in Lahore, Pakistan."
-        />
-        <meta property="og:url" content="https://ahmads-web-spark.lovable.app/cv" />
-        <meta property="og:type" content="profile" />
-      </Helmet>
+
 
       <div className="max-w-4xl mx-auto mb-8 flex items-center justify-between">
         <Link
