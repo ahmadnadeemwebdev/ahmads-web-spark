@@ -67,7 +67,7 @@ const ContactSection = () => {
 
             <div className="flex gap-3">
               {[
-                { icon: Instagram, href: "https://instagram.com/ahmadnadeem", label: "Instagram" },
+                { icon: Instagram, href: "https://www.instagram.com/ahmi_official_1?igsh=cnI1amdxcThpeWt6&utm_source=qr", label: "Instagram" },
                 { icon: Globe, href: "#", label: "Website" },
               ].map((s) => (
                 <a
