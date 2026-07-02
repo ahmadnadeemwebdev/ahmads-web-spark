@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Send, Loader2, Instagram, ArrowUpRight, Globe } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, Instagram, ArrowUpRight, Github, Linkedin } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -65,10 +65,11 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {[
                 { icon: Instagram, href: "https://www.instagram.com/ahmi_official_1?igsh=cnI1amdxcThpeWt6&utm_source=qr", label: "Instagram" },
-                { icon: Globe, href: "#", label: "Website" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/ahmad-nadeem-", label: "LinkedIn" },
+                { icon: Github, href: "https://github.com/ahmadnadeemwebdev", label: "GitHub" },
               ].map((s) => (
                 <a
                   key={s.label}

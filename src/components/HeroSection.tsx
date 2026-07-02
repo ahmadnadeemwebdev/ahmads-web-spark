@@ -28,8 +28,8 @@ const HeroSection = () => {
       <div className="max-w-6xl mx-auto w-full relative">
         {/* Tag */}
         <div className="mb-6 animate-fade-up flex flex-wrap items-center gap-3">
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent border-2 border-foreground text-foreground text-xs font-bold uppercase tracking-wider shadow-brutal-sm">
-            <span className="w-2 h-2 bg-foreground rounded-full animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent border-2 border-[#0a0a0a] text-[#0a0a0a] text-xs font-bold uppercase tracking-wider shadow-brutal-sm">
+            <span className="w-2 h-2 bg-[#0a0a0a] rounded-full animate-pulse" />
             Available for freelance
           </span>
           <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider">
