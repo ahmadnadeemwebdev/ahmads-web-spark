@@ -65,10 +65,11 @@ const ContactSection = () => {
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               {[
                 { icon: Instagram, href: "https://www.instagram.com/ahmi_official_1?igsh=cnI1amdxcThpeWt6&utm_source=qr", label: "Instagram" },
-                { icon: Globe, href: "#", label: "Website" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/ahmad-nadeem-", label: "LinkedIn" },
+                { icon: Github, href: "https://github.com/ahmadnadeemwebdev", label: "GitHub" },
               ].map((s) => (
                 <a
                   key={s.label}
