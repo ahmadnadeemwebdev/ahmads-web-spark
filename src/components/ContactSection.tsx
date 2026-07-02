@@ -1,6 +1,6 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Send, Loader2, Instagram, ArrowUpRight, Globe } from "lucide-react";
+import { Mail, MapPin, Send, Loader2, Instagram, ArrowUpRight, Github, Linkedin } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
